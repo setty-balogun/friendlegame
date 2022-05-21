@@ -1,0 +1,102 @@
+.LeaderBoardSection {
+    height: 110vh;
+}
+
+.Leaderboard-Header {
+    
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-family: 'Manrope', sans-serif;
+    letter-spacing: 0.5px;
+    margin-top: 40px;
+    margin-bottom: -40px;
+    color: #475149; 
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10%;
+    position: relative;
+    margin-left: -10%;
+    margin-right: -10%;
+  }
+  
+  .footer-item {
+    /*border: 1px solid #fff;
+    background-color: #D6E9FE;*/
+    height: 400px;
+    flex: 1;
+    margin-left: 10px;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 200px;
+  }
+
+  .Leaderboard-SubHeader {
+    display: flex;
+    width: 350px;
+    height: 30px;
+    background: var(--primary--dark);
+    border-radius: 5px;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Inter', sans-serif;
+    color: var(--white); 
+    margin-bottom: 10px;
+    white-space:nowrap;
+    text-align: center;
+    display: block;
+    line-height: 30px;
+}
+
+.TempLeft {
+    font-size: 16px;
+    line-height: 40px;
+    display: inline block;
+    min-width: 350px;
+    
+    font-family: 'Inter', sans-serif;
+    color: #475149;
+    display: block;
+}
+
+.TempCenter {
+    font-size: 16px;
+    line-height: 40px;
+    text-align: center;
+    display: block;
+    width: 100px;
+    
+    font-family: 'Inter', sans-serif;
+    color: #475149;
+
+    text-align: center;
+    justify-self: center;
+}
+
+.TempRight {
+    font-size: 16px;
+    line-height: 40px;
+    display: inline block;
+    width: 350px;
+    
+    font-family: 'Inter', sans-serif;
+    color: #475149;
+
+    text-align: right;
+}
+
+.TempCard-container1 {
+    width: 350px;
+    height: 40px;
+    background: #fff;
+    border-radius: 5px;
+    display: inline-block;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Inter', sans-serif;
+    color: #475149; 
+    margin-bottom: 10px;
+}
