@@ -16,25 +16,14 @@
 
 /* TODO: REPLACE WITH YOUR OWN FONT! */
 @import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Manrope&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Poppins:wght@200;300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Poppins:wght@200;300&display=swap');
 
 :root {
-  --primary: #98AF9E;
-  --primary--dim: #D9E2DC;
-  --primary--dark: #5D6E61;
+  --primary: #396dff;
+  --primary--dim: #6987db;
   --darkgrey: #d4d4d4;
   --medgrey: #e0e0e0;
-  --grey: #5c5c5c;
+  --grey: #f7f7f7;
   --white: #fff;
-  --black: #475149;
-  --gold: rgba(255, 174, 0, 0.678);
-  --silver: rgba(235, 235, 235, 0.911);
-  --bronze: rgba(161, 73, 1, 0.76);
-  --darkgreen: rgba(93, 110, 97, 1);
-  --dimgreen: rgb(111, 141, 123);
-  --brightgreen: rgb(56, 160, 7);
 
   --xs: 4px;
   --s: 8px;
@@ -68,10 +57,6 @@ form {
 
 .u-flex-alignCenter {
   align-items: center;
-}
-
-.u-flex-alignRight {
-  align-items: right;
 }
 
 .u-inlineBlock {
