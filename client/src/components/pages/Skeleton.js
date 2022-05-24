@@ -16,22 +16,7 @@ const Skeleton = ({ userId, handleLogin, handleLogout }) => {
   
   return (
     <>
-      {userId ? (
-        <GoogleLogout
-          clientId={GOOGLE_CLIENT_ID}
-          buttonText="Logout"
-          onLogoutSuccess={handleLogout}
-          onFailure={(err) => console.log(err)}
-        />
-      ) : (
-        <GoogleLogin
-          clientId={GOOGLE_CLIENT_ID}
-          buttonText="Login"
-          onSuccess={handleLogin}
-          onFailure={(err) => console.log(err)}
-        />
-      )}
-      
+      <div id="container">
       <h1>Good luck on your project :)</h1>
       <h2> What you need to change in this skeleton</h2>
       <button onClick={test}> jet</button>
@@ -49,6 +34,7 @@ const Skeleton = ({ userId, handleLogin, handleLogout }) => {
       </ul>
       <h2>How to go from this skeleton to our actual app</h2>
       <a href="https://docs.google.com/document/d/110JdHAn3Wnp3_AyQLkqH2W8h5oby7OVsYIeHYSiUzRs/edit?usp=sharing">Check out this getting started guide</a>
+      </div>
     </>
   );
 };

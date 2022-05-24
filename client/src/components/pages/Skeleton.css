@@ -1,1 +1,20 @@
 /* Fill me in :) */
+html {
+    background-color: #ffffff;
+    overflow: hidden;
+    height: 100%;
+    overscroll-behavior: contain;
+    display: flex;
+    justify-content: center;
+}
+
+body {
+    background-color: #ECE8E6;
+    position: relative;
+    width: 700px;
+    max-width: 100%;
+    max-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overscroll-behavior: contain;
+}
