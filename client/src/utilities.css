@@ -24,6 +24,14 @@
   --medgrey: #e0e0e0;
   --grey: #f7f7f7;
   --white: #fff;
+  --tilegreen: #5DC354;
+  --tileyellow: #fec637;
+  --bgwhite: #ECE8E6;
+  --tilewhite: #FFFFFF;
+  --bannergrey: #E1E1E1;
+  --tilegrey: #ABA5A3;
+  --letterwhite: #FFFFFF;
+  --lettergrey: var(--tilegrey);
 
   --xs: 4px;
   --s: 8px;
@@ -34,7 +42,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: "Roboto", sans-serif;
+  font-family: "Ubuntu", sans-serif;
   font-weight: 300;
 }
 
@@ -87,4 +95,12 @@ form {
 
 .u-link:hover {
   color: var(--primary--dim);
+}
+
+.App-Container{ 
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--white);
+  display: flex;
+  justify-content: center;
 }
