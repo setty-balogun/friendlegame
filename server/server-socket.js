@@ -27,7 +27,9 @@ const removeUser = (user, socket) => {
 
 module.exports = {
   init: (http) => {
-    io = require("socket.io")(http);
+    io = require("socket.io")(http, {
+      allowEIO3: true // false by default
+    });
 
     io.on("connection", (socket) => {
       console.log(`socket has connected ${socket.id}`);

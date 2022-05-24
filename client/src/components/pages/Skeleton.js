@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import GoogleLogin, { GoogleLogout } from "react-google-login";
+import { post } from "../../utilities";
 
 import "../../utilities.css";
 import "./Skeleton.css";
@@ -8,6 +9,11 @@ import "./Skeleton.css";
 const GOOGLE_CLIENT_ID = "121479668229-t5j82jrbi9oejh7c8avada226s75bopn.apps.googleusercontent.com";
 
 const Skeleton = ({ userId, handleLogin, handleLogout }) => {
+  const test = () => {
+    const body = {code: "1234", word: "apple"};
+    post("/api/words", body);
+  }
+  
   return (
     <>
       {userId ? (
@@ -25,8 +31,10 @@ const Skeleton = ({ userId, handleLogin, handleLogout }) => {
           onFailure={(err) => console.log(err)}
         />
       )}
+      
       <h1>Good luck on your project :)</h1>
       <h2> What you need to change in this skeleton</h2>
+      <button onClick={test}> jet</button>
       <ul>
         <li>
           Change the Frontend CLIENT_ID (Skeleton.js) to your team's CLIENT_ID (obtain this at
