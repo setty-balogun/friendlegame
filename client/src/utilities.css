@@ -24,6 +24,14 @@
   --medgrey: #e0e0e0;
   --grey: #f7f7f7;
   --white: #fff;
+  --tilegreen: #6ecf65;
+  --tileyellow: #fec637;
+  --bgwhite: #ECE8E6;
+  --tilewhite: #FFFFFF;
+  --bannergrey: #E1E1E1;
+  --tilegrey: #ABA5A3;
+  --letterwhite: #FFFFFF;
+  --lettergrey: var(--tilegrey);
 
   --xs: 4px;
   --s: 8px;
