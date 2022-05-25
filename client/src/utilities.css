@@ -37,6 +37,10 @@
   --s: 8px;
   --m: 16px;
   --l: 24px;
+  --navvh: 5vh;
+  --vh: 95vh;
+  --vhh: 47.5vh;
+  --vw: 100vw;
 }
 
 body {
@@ -103,4 +107,18 @@ form {
   background-color: var(--white);
   display: flex;
   justify-content: center;
+  overflow: hidden;
+  overscroll-behavior: contain;
+  align-items: stretch;
+}
+
+body {
+  background-color: #ECE8E6;
+  position: relative;
+  width: 700px;
+  max-width: 100%;
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overscroll-behavior: contain;
 }

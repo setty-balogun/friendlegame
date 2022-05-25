@@ -39,6 +39,13 @@ const Play = () => {
                     <div className = "Play-Tile">1</div>
                     <div className = "Play-Tile">1</div>
                 </div>
+                <div className = "Play-Row">
+                    <div className = "Play-Tile">1</div>
+                    <div className = "Play-Tile">1</div>
+                    <div className = "Play-Tile">1</div>
+                    <div className = "Play-Tile">1</div>
+                    <div className = "Play-Tile">1</div>
+                </div>
             </div>
             <div className = "Play-Keyboard">
                 
