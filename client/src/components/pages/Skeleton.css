@@ -1,13 +1,5 @@
-/* Fill me in :) */
 
-
-body {
-    background-color: #ECE8E6;
-    position: relative;
-    width: 700px;
-    max-width: 100%;
-    max-height: 100vh;
+#but {
     display: flex;
-    flex-direction: column;
-    overscroll-behavior: contain;
+    flex-shrink: 1;
 }
