@@ -31,6 +31,7 @@
     "nodemon": "^2.0.6",
     "react": "^16.14.0",
     "react-bootstrap": "^2.4.0",
+    "react-bootstrap-buttons": "^1.0.0",
     "react-dom": "^16.14.0",
     "react-google-login": "^5.2.1",
     "react-media-hook": "^0.4.9",

@@ -34,6 +34,7 @@
   --bannergrey: #E1E1E1;
   --tilegrey: #ABA5A3;
   --letterwhite: #FFFFFF;
+  --keytilewhite: #D6CFCD;
   --lettergrey: var(--tilegrey);
 
   --xs: 4px;
