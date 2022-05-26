@@ -105,8 +105,8 @@ form {
 }
 
 .App-Container{ 
-  width: 100vw;
-  height: 100vh;
+  width: var(--vw);
+  height: var(--vh);
   background-color: var(--white);
   display: flex;
   justify-content: center;
