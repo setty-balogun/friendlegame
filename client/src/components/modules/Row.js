@@ -5,8 +5,8 @@ import Tile from "./Tile.js";
 
 const Row = (props) =>{
     const [types, setTypes] = useState([]);
-    const word = props.word.split();
-    const typtemp = [];
+    let word = props.word.split('');
+    let typtemp = [];
     const check = (str) => {
         //check completed rows to be implemented
         //updates types to be array len 5 with types of each letter
@@ -14,7 +14,7 @@ const Row = (props) =>{
     useEffect(() => {
         if(props.state === 0){
             setTypes(['Inactive','Inactive','Inactive','Inactive','Inactive'])
-        }else if(props.word.length() === props.length)
+        }else if(props.word.length === props.length)
         {
             check(props.word)
         /*}else if(props.word.length === 0){
@@ -24,9 +24,9 @@ const Row = (props) =>{
             for(let i = 0; i < word.length; i++)
             {
                 if(word[i] !== ' '){
-                    typtemp.append['Active'];
+                    typtemp.push('Active');
                 }else{
-                    typtemp.append['Inactive'];
+                    typtemp.push('Inactive');
                 }
             }
             typtemp[typtemp.indexOf[' ']] = 'Active'
@@ -37,23 +37,30 @@ const Row = (props) =>{
 
     useEffect(() => {
         while(word.length < props.length){
-            word.append[' '];
+            word.push(' ');
         }
-    },[props.word])
+    },[])
     //make all word arrays the length of a row
 
 
-    const content = ' ';
-    const type = null;
+    let content = [...Array(props.length).keys()].map((index) => (
+        <Tile
+            value = {word[index]}
+            type = {types[index]}
+        />
+    ));
+    /*useEffect(() => {
+        if(word.length === props.length){
+            content = [...Array(props.length).keys()].map((index) => (
+                <Tile
+                    value = {word[index]}
+                    type = {types[index]}
+                />
+            ));
+            console.log("y");
+        }
+    },[word])*/
     
-    if(word.length === props.length){
-        content = [...Array(props.length).keys()].map((index)=> (
-            <Tile
-                value = {word[index]}
-                type = {types[index]}
-            />
-        ));
-    }
     //create tile objects to populate rows. 
 
     return(

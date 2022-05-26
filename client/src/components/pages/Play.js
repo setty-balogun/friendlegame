@@ -4,7 +4,7 @@ import Row from "../modules/Row.js";
 
 const Play = () => {
     let rows = null;
-    let words = ['1', '1', '1','1','1'];
+    let words = ['JAZZY', 'XYLEM', 'SHORT','FU','',''];
     rows = words.map((w) => (
         <Row
             word = {w}
