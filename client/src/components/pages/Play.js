@@ -1,14 +1,25 @@
 import React, { Component } from "react";
 import "./Play.css";
+import Row from "../modules/Row.js";
 
 const Play = () => {
+    let rows = null;
+    let words = ['1', '1', '1','1','1'];
+    rows = words.map((w) => (
+        <Row
+            word = {w}
+            length = {5}
+        />
+        //creates row features
+    ));
+
 
     return(
         <>
         <div className="Play-Container">
             <div className = "Play-BoardContainer">
                 <div className = "Play-Board">
-                    <div className = "Play-Row">
+                    {/*<div className = "Play-Row">
                         <div className = "Play-Tile Green">1</div>
                         <div className = "Play-Tile">1</div>
                         <div className = "Play-Tile">1</div>
@@ -46,7 +57,8 @@ const Play = () => {
                         <div className = "Play-Tile">1</div>
                         <div className = "Play-Tile">1</div>
                         <div className = "Play-Tile">1</div>
-                    </div>
+    </div>*/}
+                    {rows}
                 </div>
             </div>
             <div className = "Play-KeyboardContainer">
