@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import GoogleLogin, { GoogleLogout } from "react-google-login";
 import { post } from "../../utilities";
+import CreateModal from "../modules/CreateModal.js";
 
 import "../../utilities.css";
 import "./Skeleton.css";
@@ -17,9 +18,10 @@ const Skeleton = ({ userId, handleLogin, handleLogout }) => {
   return (
     <>
       <div id="container">
+        <CreateModal text="Create a Friendle" />
       <h1>Good luck on your project :)</h1>
       <h2> What you need to change in this skeleton</h2>
-      <button onClick={test}> jet</button>
+      <button onClick={test} id="but"> jet</button>
       <ul>
         <li>
           Change the Frontend CLIENT_ID (Skeleton.js) to your team's CLIENT_ID (obtain this at

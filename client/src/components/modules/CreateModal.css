@@ -1,0 +1,47 @@
+.startButton {
+    background: #70B25C;
+	border-radius: 12px;
+    display: flex;
+    text-align: center;
+    font-family: 'Manrope', sans-serif;
+    letter-spacing: 1px;
+    color: var(--white); 
+    box-shadow: 0 6.5px 0 0 #6FA55F;
+	transform: scale(1);
+    justify-content: center;
+}
+
+
+.szLarge {
+    width: 450px;
+    height: 60px;
+    line-height: 63px;
+    font-size: 30px;
+}
+
+.sz {
+    width: 80vw;
+    height: 8vh;
+    line-height: 9vh;
+    font-size: 25px;
+}
+
+.startButton:hover {
+    color: var(--white);
+    text-decoration: none;
+	animation: pulse-dark 2s infinite;
+}
+
+@keyframes pulse-dark {
+    0% {
+      transform: scale(0.95);
+    }
+    
+    70% {
+      transform: scale(1);
+    }
+    
+    100% {
+      transform: scale(0.95);
+    }
+  }
