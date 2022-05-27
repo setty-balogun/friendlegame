@@ -52,10 +52,12 @@
 
 .Green{
     background-color: var(--tilegreen);
+    box-shadow: 0 4px 0 0 var(--tilegreenshadow);
 }
 
 .Yellow{
     background-color: var(--tileyellow);
+    box-shadow: 0 4px 0 0 var(--tileyellowshadow);
 }
 
 .Grey{

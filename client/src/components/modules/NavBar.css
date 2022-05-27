@@ -19,19 +19,21 @@
     align-items:center;
     justify-content: center;
     background-color: var(--keytilewhite);
-    box-shadow: 0 4px 0 0 rgb(143, 143, 143);
-    font-family: sans-serif;
-    border-radius: 10%;
+    box-shadow: 0 4px 0 0 var(--tilegrey);
+    border-radius: 20%;
     opacity: 100%;
     height: 80%;
     width: 30px;
     margin: 2px;
+    color: #ffff;
 }
 
 .green{
     background-color: var(--tilegreen);
+    box-shadow: 0 4px 0 0 var(--tilegreenshadow);
 }
 
 .yellow{
     background-color: var(--tileyellow);
+    box-shadow: 0 4px 0 0 var(--tileyellowshadow);
 }
