@@ -145,7 +145,7 @@ const Play = () => {
         })
     }*/
     let validLetters = 'abcdefghijklmnopqrstuvwxyz'.split('');
-    function kmn(e){
+    /*function kmn(e){
         let name = e.key;
         let code = e.code;
         console.log(e.key)
@@ -167,7 +167,29 @@ const Play = () => {
     //for useability i dont want to use keyup
     useEffect(() => {
         window.addEventListener('keyup', kmn)
-    }, [count]);
+    }, [count]);*/
+
+    useEffect(() => {
+        const handle = (e) => {
+            let name = e.key;
+            let code = e.code;
+            console.log(e.key)
+            if(validLetters.includes(name)){
+                console.log('here')
+                handleClick(name.toUpperCase());
+                //allowed = false;
+            }else if(code == "Enter"){
+                handleClick('1');
+            }else if(code == "Backspace"){
+                handleClick('0');
+            }
+        }
+        window.addEventListener('keyup', handle)
+        return () => {
+            window.removeEventListener('keyup', handle)
+        }
+    }, [handleClick])
+
     /*document.addEventListener('keyup', e => {
         let name = e.key;
         let code = e.code;
