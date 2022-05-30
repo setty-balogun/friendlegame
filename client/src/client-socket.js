@@ -1,4 +1,5 @@
 import socketIOClient from "socket.io-client";
+import * as io from 'socket.io-client' 
 import { post } from "./utilities";
 const endpoint = window.location.hostname + ":" + window.location.port;
 export const socket = socketIOClient(endpoint);
