@@ -8,10 +8,25 @@ const Play = () => {
     const [words, setWords] = useState([]);
     const [wordString, setWs] = useState('');
     const [completed, setCompleted] = useState(true);
+    const [count, setty] = useState('');
     const wordLength = 5;
     //let rows = null;
     //let words = ['JAZZY', 'XYLEM', 'SHORT','FU','',''];
     //setWords(['JAZZY', 'XYLEM', 'SHORT','FU','',''])
+    /*useEffect(() => {
+        let words =[];
+        let wordString = '';
+        let completed = true;
+    }, [words]);
+    const setWords = (x) => {
+        words = x;
+    } 
+    const setWs = (x) => {
+        wordString = x;
+    } 
+    const setCompleted = (x) => {
+        completed = x;
+    } */
     useEffect(() => {
         setRows( words.map((w) => (
             <Row
@@ -129,26 +144,30 @@ const Play = () => {
             }
         })
     }*/
-    let validLetters = 'abcdefghijklmnopqrstuvwxyz'.split('')
+    let validLetters = 'abcdefghijklmnopqrstuvwxyz'.split('');
+    function kmn(e){
+        let name = e.key;
+        let code = e.code;
+        console.log(e.key)
+        if(validLetters.includes(name)){
+            console.log('here')
+            handleClick(name.toUpperCase());
+            //allowed = false;
+        }else if(code == "Enter"){
+            handleClick('1');
+        }else if(code == "Backspace"){
+            handleClick('0');
+        }
+        window.removeEventListener('keyup', kmn);
+        setty(count+' ');
+        
+    }
     //let allowed = true;
     //need to control repeats so keystroke only causes one key input on being held
     //for useability i dont want to use keyup
     useEffect(() => {
-        document.addEventListener('keyup', e => {
-            let name = e.key;
-            let code = e.code;
-            console.log(e.key)
-            if(validLetters.includes(name)){
-                console.log('here')
-                handleClick(name.toUpperCase());
-                //allowed = false;
-            }else if(code == "Enter"){
-                handleClick('1');
-            }else if(code == "Backspace"){
-                handleClick('0');
-            }
-        })
-    }, [handleClick]);
+        window.addEventListener('keyup', kmn)
+    }, [count]);
     /*document.addEventListener('keyup', e => {
         let name = e.key;
         let code = e.code;
