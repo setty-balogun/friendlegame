@@ -2,8 +2,10 @@ import React, { useState, useEffect } from "react";
 import { Router } from "@reach/router";
 import NotFound from "./pages/NotFound.js";
 import Skeleton from "./pages/Skeleton.js";
+import Create from "./pages/Create.js";
 import Play from "./pages/Play.js";
 import NavBar from "./modules/NavBar.js";
+
 
 import "../utilities.css";
 
@@ -45,7 +47,8 @@ const App = () => {
       <NavBar />
       <Router className = "App-Container">
           <Skeleton path="/" handleLogin={handleLogin} handleLogout={handleLogout} userId={userId} />
-          <Play path="/play"/>
+          <Create path="/create/:codeID"/>
+          <Play path="/play" />
           <NotFound default />
       </Router>
     </>

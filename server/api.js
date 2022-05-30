@@ -12,6 +12,7 @@ const express = require("express");
 // import models so we can interact with the database
 const User = require("./models/user");
 const GameCode = require("./models/gamecode");
+const Word = require("./models/word");
 
 // import authentication library
 const auth = require("./auth");
@@ -43,11 +44,23 @@ router.post("/initsocket", (req, res) => {
 // | write your API methods below!|
 // |------------------------------|
 
-router.get("/words", (req, res) => {
-  GameCode.find({code: req.code}).then((word) => {res.send(word)});
+router.get("/gamecodes", (req, res) => {
+  GameCode.find({code: req.query.code}).then((word) => {res.send(word)});
 });
 
-router.post("/words", (req, res) => {
+router.get("/words", (req, res) => {
+  Word.find({word: req.query.word}).then((wor) => res.send(wor));
+});
+
+router.get("/allGameCodes", (req,res) => {
+  GameCode.find({}).then((words) => res.send(words));
+});
+
+router.get("/allWords", (req, res) => {
+  Word.find({}).then((words) => res.send(words));
+});
+
+router.post("/gamecodes", (req, res) => {
   const newGameCode = new GameCode({
     code: req.body.code,
     word: req.body.word,
