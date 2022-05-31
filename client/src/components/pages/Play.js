@@ -7,6 +7,7 @@ const Play = () => {
     const [rows, setRows] = useState([]);
     const [words, setWords] = useState([]);
     const [wordString, setWs] = useState('');
+    const [wordStringL, setWsl] = useState('');
     const [completed, setCompleted] = useState(true);
     const [count, setty] = useState('');
     const wordLength = 5;
@@ -28,10 +29,13 @@ const Play = () => {
         completed = x;
     } */
     useEffect(() => {
+        let active = wordStringL.indexOf(' ')/wordLength;
+        console.log(active)
         setRows( words.map((w) => (
             <Row
                 word = {w}
                 length = {wordLength}
+                state = {words.indexOf(w)<=active}
             />
             //creates row features
         )))
@@ -42,6 +46,7 @@ const Play = () => {
         while(temp.length < wordLength*6){
             temp = temp+' ';
         }
+        setWsl(temp);
         let temp2 = [];
         for (let i = 0, charsLength = temp.length; i < charsLength; i += wordLength) {
             temp2.push(temp.substring(i, i + wordLength));
