@@ -15,7 +15,7 @@ const Play = (props) => {
     
     useEffect(() => {
 
-        let active = wordStringL.indexOf(' ')/wordLength;
+        let active = (wordStringL.indexOf(' ')/wordLength < 0) ? 6 : (wordStringL.indexOf(' ')/wordLength);
         console.log('active ' + active);
         for (let word in words) {
             console.log(words.indexOf(word));
