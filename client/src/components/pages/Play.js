@@ -11,23 +11,8 @@ const Play = (props) => {
     const [completed, setCompleted] = useState(true);
     const [count, setty] = useState('');
     const wordLength = 5;
-    //let rows = null;
-    //let words = ['JAZZY', 'XYLEM', 'SHORT','FU','',''];
-    //setWords(['JAZZY', 'XYLEM', 'SHORT','FU','',''])
-    /*useEffect(() => {
-        let words =[];
-        let wordString = '';
-        let completed = true;
-    }, [words]);
-    const setWords = (x) => {
-        words = x;
-    } 
-    const setWs = (x) => {
-        wordString = x;
-    } 
-    const setCompleted = (x) => {
-        completed = x;
-    } */
+
+    
     useEffect(() => {
 
         let active = wordStringL.indexOf(' ')/wordLength;
@@ -68,13 +53,6 @@ const Play = (props) => {
         setWords(temp2);
     }, [wordString]);
 
-    /*rows = words.map((w) => (
-        <Row
-            word = {w}
-            length = {5}
-        />
-        //creates row features
-    ));*/
     let keysR1 = ('QWERTYUIOP').split('')
     let keysR2 = ('ASDFGHJKL').split('')
     let keysR3 = ('1ZXCVBNM0').split('')
@@ -151,44 +129,7 @@ const Play = (props) => {
     let keyboardR3 = keysR3.map((w) => (
         RowsK(w)
     ));
-    /*const keyBoard = document.querySelector('.keyboard')
-    
-    if(keyBoard){
-        console.log("here");
-        keyBoard.addEventListener('keydown', e => {
-            let name = e.key;
-            let code = e.code;
-            console.log(name);
-            if(code < 91 && code > 64){
-                handleClick(name.toUpperCase());
-            }
-        })
-    }*/
     let validLetters = 'abcdefghijklmnopqrstuvwxyz'.split('');
-    /*function kmn(e){
-        let name = e.key;
-        let code = e.code;
-        console.log(e.key)
-        if(validLetters.includes(name)){
-            console.log('here')
-            handleClick(name.toUpperCase());
-            //allowed = false;
-        }else if(code == "Enter"){
-            handleClick('1');
-        }else if(code == "Backspace"){
-            handleClick('0');
-        }
-        window.removeEventListener('keyup', kmn);
-        setty(count+' ');
-        
-    }
-    //let allowed = true;
-    //need to control repeats so keystroke only causes one key input on being held
-    //for useability i dont want to use keyup
-    useEffect(() => {
-        window.addEventListener('keyup', kmn)
-    }, [count]);*/
-
     useEffect(() => {
         const handle = (e) => {
             let name = e.key;
@@ -207,12 +148,6 @@ const Play = (props) => {
         }
     }, [handleClick])
 
-    /*document.addEventListener('keyup', e => {
-        let name = e.key;
-        let code = e.code;
-        allowed = true;
-    })*/
-    
     
     
 

@@ -44,8 +44,11 @@
     align-items:center;
     justify-content: center;
     background-color: var(--letterwhite);
-    box-shadow: 0 4px 0 0 rgb(143, 143, 143);
-    font-family: sans-serif;
+    box-shadow: 0 4px 0 0 rgb(199, 198, 198);
+    font-family: "Nunito";
+    color: black;
+    font-size:x-large;
+    font-weight: 1000;
     border-radius: 10%;
     opacity: 100%;
 }
@@ -53,15 +56,18 @@
 .Green{
     background-color: var(--tilegreen);
     box-shadow: 0 4px 0 0 var(--tilegreenshadow);
+    color: white;
 }
 
 .Yellow{
     background-color: var(--tileyellow);
     box-shadow: 0 4px 0 0 var(--tileyellowshadow);
+    color: white;
 }
 
 .Grey{
     background-color: var(--tilegrey);
+    color: white;
 }
 .Active{
     opacity: 100%
@@ -116,8 +122,9 @@
     align-items:center;
     justify-content: center;
     background-color: var(--keytilewhite);
-    box-shadow: 0 4px 0 0 rgb(143, 143, 143);
-    font-family: sans-serif;
+    box-shadow: 0 4px 0 0 var(--keytilewhiteshadow);
+    font-family: "Nunito";
+    font-weight: bolder;
     border-radius: 10%;
     opacity: 100%;
     height: 45px;
