@@ -14,7 +14,7 @@ const Skeleton = (props) => {
   
   return (
     <>
-      <div id="container">
+      <div id="containerS">
         <CreateModal setCode={props.setCode} text="Create a Friendle" />
         <div className="orContainer">
           <div className="or"></div>
