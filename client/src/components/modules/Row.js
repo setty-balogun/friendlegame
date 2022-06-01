@@ -35,7 +35,7 @@ const Row = (props) =>{
                     typtemp.push('Active');
                 }
             }
-            typtemp[word.indexOf(' ')] = 'Active'
+            //typtemp[word.indexOf(' ')] = 'Active'
             console.log(typtemp);
             setTypes(typtemp);
         }
