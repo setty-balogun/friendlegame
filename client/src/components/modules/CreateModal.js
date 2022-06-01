@@ -15,7 +15,7 @@ const CreateModal = (props) => {
 
     const handleSubmit = () => {
         console.log(document.getElementById('only').value);
-        var inp = document.getElementById('only').value;
+        var inp = document.getElementById('only').value.toLowerCase();
         get("/api/words", {word: inp}).then((words) => {
             if (words.length === 0) {
                 setTimeout(() => {

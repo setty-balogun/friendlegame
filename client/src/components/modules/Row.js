@@ -19,7 +19,7 @@ const Row = (props) =>{
         console.log(props.state)
         if(!props.state){
             setTypes(['Inactive','Inactive','Inactive','Inactive','Inactive'])
-            console.log("get fucked");
+            //console.log("get fucked");
         }else if(props.completed)
         {
             check(word)
@@ -36,7 +36,7 @@ const Row = (props) =>{
                 }
             }
             typtemp[word.indexOf(' ')] = 'Active'
-            console.log(typtemp);
+            //console.log(typtemp);
             setTypes(typtemp);
         }
     },[word])

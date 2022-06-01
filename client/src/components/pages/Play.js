@@ -29,17 +29,31 @@ const Play = (props) => {
         completed = x;
     } */
     useEffect(() => {
+
         let active = wordStringL.indexOf(' ')/wordLength;
-        console.log(active)
-        setRows( words.map((w) => (
+        console.log('active ' + active);
+        for (let word in words) {
+            console.log(words.indexOf(word));
+        }
+
+        let states = [false, false, false, false, false, false];
+        for (let i = 0; i < 6; i++) {
+            if (i <= active) { states[i] = true; } 
+            if ((!completed && i<=active && active%1==0) && !(!completed && (i+1)<=active && active%1==0)) {
+                states[i] = false;
+            }
+        } 
+
+        let rows = [...Array(6).keys()].map((index) => (
             <Row
-                word = {w}
+                word = {wordStringL.slice(index*wordLength, index*wordLength+wordLength)}
                 length = {wordLength}
-                state = {words.indexOf(w)<=active}
+                state = {states[index]}
             />
-            //creates row features
-        )))
-    }, [words]);
+        ));
+        
+        setRows(rows);
+    }, [words, completed]);
 
     useEffect(() => {
         let temp = wordString;
@@ -51,7 +65,6 @@ const Play = (props) => {
         for (let i = 0, charsLength = temp.length; i < charsLength; i += wordLength) {
             temp2.push(temp.substring(i, i + wordLength));
         }
-        console.log(temp2);
         setWords(temp2);
     }, [wordString]);
 
@@ -68,7 +81,7 @@ const Play = (props) => {
 
     const handleClick = (x) => {
         //console.log(x);
-        console.log(wordString);
+        //console.log(wordString);
         if(wordString.length%wordLength === 0){
             if(completed){
                 if(x == 0 || x == 1){
@@ -83,6 +96,7 @@ const Play = (props) => {
                     //compare to valid word database here
                     // placeholder for check function
                     setCompleted(true);
+                    console.log("asldfj");
                 }else{
                     return;
                 }
@@ -91,12 +105,13 @@ const Play = (props) => {
             if(wordString.length !== 0){
                 if(wordString.length%wordLength === 1){
                     setCompleted(true);
+                    
                 }
                 setWs(wordString.slice(0,-1))
             }
         }else if(x == 1){
             //something to say word is not complete
-            console.log("word not complete");
+            //console.log("word not complete");
         }else{
             setWs(wordString+x);
         }
@@ -178,11 +193,8 @@ const Play = (props) => {
         const handle = (e) => {
             let name = e.key;
             let code = e.code;
-            console.log(e.key)
             if(validLetters.includes(name)){
-                console.log('here')
                 handleClick(name.toUpperCase());
-                //allowed = false;
             }else if(code == "Enter"){
                 handleClick('1');
             }else if(code == "Backspace"){
