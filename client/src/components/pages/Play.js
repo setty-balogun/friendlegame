@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import "./Play.css";
 import Row from "../modules/Row.js";
+import { get, post } from "../../utilities";
 
 const Play = (props) => {
     const [rows, setRows] = useState([]);
@@ -9,10 +10,82 @@ const Play = (props) => {
     const [wordString, setWs] = useState('');
     const [wordStringL, setWsl] = useState('');
     const [completed, setCompleted] = useState(true);
-    const [count, setty] = useState('');
+    const [secretWord, setSecretWord] = useState('SHOOT');
+    const [guessed, setGuessed] = useState({});
+    const [sw, setSW] = useState({});
+    //counts for letters in secret word
     const wordLength = 5;
 
-    
+    useEffect(() => {
+        get("/api/gamecodes").then((word)=>{
+            setSecretWord(word)
+        })
+    }, []);
+
+    useEffect(() => {
+        let temp = {}
+        var a = 97;
+        for (var i = 0; i<26; i++)
+            temp[String.fromCharCode(a + i).toUpperCase()] = 0;
+        for(let l of secretWord){
+            temp[l]+=1
+        }
+        console.log(temp)
+        setSW(temp)
+    }, []);
+
+    const check = (str) => {
+        let res = []
+        let gw = {...sw}
+        let guess = {...guessed}
+        let seen = [];
+        for( let i = 0; i < str.length; i++){
+            let word = secretWord
+            let letter = str[i]
+            let sletter = word[i]
+            if(word.indexOf(letter) === -1){
+                res.push(['Grey'])
+                if(guess[letter] !== 'Green' && guess[letter] !== 'Yellow'){
+                    guess[letter] = 'Grey'
+                }     
+            }else if(letter === sletter){
+                res.push(['Green'])
+                guess[letter] = 'Green'
+            }else{
+                res.push(['Yellow'])
+                if(guess[letter] !== 'Green'){
+                    guess[letter] = 'Yellow'
+                }
+            }
+            gw[letter]-=1;
+        }
+        for(let i = 0; i < str.length; i++){
+            let letter = str[i]
+            let numLet = sw[letter]
+            if(!(seen.includes(letter))){
+                seen.push[letter]
+                if(gw[letter]<0 && numLet>0){
+                    for(let j = 0; j < str.length; j++){
+                        if(res[j] == 'Green' && str[j] == letter){
+                            numLet-=1;
+                        }
+                    }
+                    for(let j = 0; j < str.length; j++){
+                        if(res[j] == 'Yellow' && str[j] == letter){
+                            if(numLet == 0){
+                                res[j] = "Grey"
+                            }else{
+                                numLet-=1;
+                            }
+                        }
+                    }
+                }
+            }
+            
+        }
+        setGuessed(guess)
+        return(res)
+    }
     useEffect(() => {
 
         let active = (wordStringL.indexOf(' ')/wordLength < 0) ? 6 : (wordStringL.indexOf(' ')/wordLength);
@@ -28,12 +101,15 @@ const Play = (props) => {
                 states[i] = false;
             }
         } 
-
+        let comp = [...states];
+        comp[comp.lastIndexOf(true)] = false;
         let rows = [...Array(6).keys()].map((index) => (
             <Row
                 word = {wordStringL.slice(index*wordLength, index*wordLength+wordLength)}
                 length = {wordLength}
                 state = {states[index]}
+                completed = {comp[index]}
+                check = {check}
             />
         ));
         
@@ -113,7 +189,7 @@ const Play = (props) => {
             )
         }else{
             bttn = (
-            <div onClick = {() => {handleClick(x)}} className = "Play-KeyTile">
+            <div onClick = {() => {handleClick(x)}} className = {"Play-KeyTile " + guessed[x]}>
                 {x}
             </div>
             )
