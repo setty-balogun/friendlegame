@@ -85,6 +85,7 @@
 
 .Grey{
     background-color: var(--tilegrey);
+    box-shadow: 0 4px 0 0 var(--tilegreyshadow);
     color: white;
 }
 .Active{
@@ -146,3 +147,24 @@
 .Play-KeyTile:active{
     background-color: var(--tilegrey);
 }
+
+.Play-TileVictory{
+    animation: pulse-color 1s;
+}
+
+@keyframes pulse-color {
+    0% {
+      transform: scale(1);
+      box-shadow: 0 4px 0 0 var(--tilegreenshadow);
+    }
+    
+    50% {
+      transform: scale(1.05);
+      box-shadow: 0 4px 0 .5px var(--tilegreenshadow);
+    }
+    
+    100% {
+      transform: scale(1);
+      box-shadow: 0 4px 0 0 var(--tilegreenshadow);
+    }
+  }

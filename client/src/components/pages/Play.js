@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import "./Play.css";
 import Row from "../modules/Row.js";
 import { get, post } from "../../utilities";
+import $ from "jquery";
 
 const Play = (props) => {
     const [rows, setRows] = useState([]);
@@ -10,17 +11,43 @@ const Play = (props) => {
     const [wordString, setWs] = useState('');
     const [wordStringL, setWsl] = useState('');
     const [completed, setCompleted] = useState(true);
-    const [secretWord, setSecretWord] = useState('SHOOT');
+    const [secretWord, setSecretWord] = useState('SHORT');
     const [guessed, setGuessed] = useState({});
     const [sw, setSW] = useState({});
     //counts for letters in secret word
     const wordLength = 5;
 
-    useEffect(() => {
+    /*useEffect(() => {
         get("/api/gamecodes").then((word)=>{
             setSecretWord(word)
         })
-    }, []);
+    }, []);*/
+
+    const victory = (row) => {
+        console.log("You Win");
+        let tileIds = ''
+        let x = "#00"
+        /*for(let i = 0; i < wordLength; i++)
+        {
+            tileIds = tileIds + "#"+row.toString()+i.toString()+"," 
+        }
+        tileIds = tileIds.slice(0,-1)
+        console.log(tileIds)
+        $(".Play-Tile").filter(tileIds).addClass("Play-TileVictory")*/
+        for(let i = 0; i < wordLength; i++)
+        {
+            let delay = (i*.2).toString()+'s'
+            $(".Play-Tile").filter("#"+row.toString()+i.toString()).addClass("Play-TileVictory")
+            $(".Play-Tile").filter("#"+row.toString()+i.toString()).css("animation-delay", delay)
+            
+        }
+
+        //console.log(document.querySelectorAll('.Play-Tile'))
+        
+        //console.log($(".Play-Tile"))
+        
+        //$("[win = true ]").addClass("Play-TileVictory")
+    }
 
     useEffect(() => {
         let temp = {}
@@ -34,7 +61,7 @@ const Play = (props) => {
         setSW(temp)
     }, []);
 
-    const check = (str) => {
+    const check = (str, row) => {
         let res = []
         let gw = {...sw}
         let guess = {...guessed}
@@ -84,6 +111,13 @@ const Play = (props) => {
             
         }
         setGuessed(guess)
+        for(let i = 0; i < wordLength; i++)
+        {
+            let delay = (i*.2).toString()+'s'
+            $(".Play-Tile").filter("#"+row.toString()+i.toString()).addClass("Play-TileVictory")
+            $(".Play-Tile").filter("#"+row.toString()+i.toString()).css("animation-delay", delay)
+            
+        }
         return(res)
     }
     useEffect(() => {
@@ -110,6 +144,9 @@ const Play = (props) => {
                 state = {states[index]}
                 completed = {comp[index]}
                 check = {check}
+                id = {index.toString()}
+                key = {index.toString()}
+                vic = {victory}
             />
         ));
         
@@ -134,8 +171,6 @@ const Play = (props) => {
     let keysR3 = ('1ZXCVBNM0').split('')
 
     const handleClick = (x) => {
-        //console.log(x);
-        //console.log(wordString);
         if(wordString.length%wordLength === 0){
             if(completed){
                 if(x == 0 || x == 1){
@@ -150,7 +185,6 @@ const Play = (props) => {
                     //compare to valid word database here
                     // placeholder for check function
                     setCompleted(true);
-                    console.log("asldfj");
                 }else{
                     return;
                 }
