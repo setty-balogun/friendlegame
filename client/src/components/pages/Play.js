@@ -25,28 +25,16 @@ const Play = (props) => {
 
     const victory = (row) => {
         console.log("You Win");
-        let tileIds = ''
-        let x = "#00"
-        /*for(let i = 0; i < wordLength; i++)
-        {
-            tileIds = tileIds + "#"+row.toString()+i.toString()+"," 
-        }
-        tileIds = tileIds.slice(0,-1)
-        console.log(tileIds)
-        $(".Play-Tile").filter(tileIds).addClass("Play-TileVictory")*/
         for(let i = 0; i < wordLength; i++)
         {
-            let delay = (i*.2).toString()+'s'
+            let delay = (i*.2+3).toString()+'s'
             $(".Play-Tile").filter("#"+row.toString()+i.toString()).addClass("Play-TileVictory")
             $(".Play-Tile").filter("#"+row.toString()+i.toString()).css("animation-delay", delay)
             
         }
-
-        //console.log(document.querySelectorAll('.Play-Tile'))
-        
-        //console.log($(".Play-Tile"))
-        
-        //$("[win = true ]").addClass("Play-TileVictory")
+        console.log($(".Play-Tile").filter("#"+(Number(row)+1).toString()+"0"))
+        $(".Play-Tile").filter("#"+(Number(row)+1).toString()+"0").removeClass("Active")
+        $(".Play-Tile").filter("#"+(Number(row)+1).toString()+"0").addClass("Inactive")
     }
 
     useEffect(() => {
@@ -111,12 +99,15 @@ const Play = (props) => {
             
         }
         setGuessed(guess)
-        for(let i = 0; i < wordLength; i++)
+        /*for(let i = 0; i < wordLength; i++)
         {
             let delay = (i*.2).toString()+'s'
             $(".Play-Tile").filter("#"+row.toString()+i.toString()).addClass("Play-TileVictory")
             $(".Play-Tile").filter("#"+row.toString()+i.toString()).css("animation-delay", delay)
             
+        }*/
+        for(let i = 0; i<  res.length; i++){
+            //res[i] = res[i] + " Play-TileVictory "
         }
         return(res)
     }
@@ -171,39 +162,43 @@ const Play = (props) => {
     let keysR3 = ('1ZXCVBNM0').split('')
 
     const handleClick = (x) => {
-        if(wordString.length%wordLength === 0){
-            if(completed){
-                if(x == 0 || x == 1){
-                    return
-                }
-                setWs(wordString+x); 
-                setCompleted(false);
-            }else{
-                if(x == 0){
-                    setWs(wordString.slice(0,-1))
-                }else if(x == 1){
-                    //compare to valid word database here
-                    // placeholder for check function
-                    setCompleted(true);
+        if($(".Play-Tile").hasClass("Active"))
+        {
+            if(wordString.length%wordLength === 0){
+                if(completed){
+                    if(x == 0 || x == 1){
+                        return
+                    }
+                    setWs(wordString+x); 
+                    setCompleted(false);
                 }else{
-                    return;
+                    if(x == 0){
+                        setWs(wordString.slice(0,-1))
+                    }else if(x == 1){
+                        //compare to valid word database here
+                        // placeholder for check function
+                        setCompleted(true);
+                    }else{
+                        return;
+                    }
                 }
-            }
-        }else if(x == 0){
-            if(wordString.length !== 0){
-                if(wordString.length%wordLength === 1){
-                    setCompleted(true);
-                    
+            }else if(x == 0){
+                if(wordString.length !== 0){
+                    if(wordString.length%wordLength === 1){
+                        setCompleted(true);
+                        
+                    }
+                    setWs(wordString.slice(0,-1))
                 }
-                setWs(wordString.slice(0,-1))
+            }else if(x == 1){
+                //something to say word is not complete
+                //console.log("word not complete");
+            }else{
+                setWs(wordString+x);
             }
-        }else if(x == 1){
-            //something to say word is not complete
-            //console.log("word not complete");
-        }else{
-            setWs(wordString+x);
+            //handles onscreen button click
         }
-        //handles onscreen button click
+        
     }
     
 

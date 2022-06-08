@@ -39,14 +39,15 @@
   --keytilewhite: #D6CFCD;
   --keytilewhiteshadow: #c4bfbd;
   --lettergrey: var(--tilegrey);
+  --tilewhiteshadow: rgb(199, 198, 198);
 
   --xs: 4px;
   --s: 8px;
   --m: 16px;
   --l: 24px;
   --navvh: 5vh;
-  --vh: 95vh;
-  --vhh: 47.5vh;
+  --vh: 92vh;
+  --vhh: 46vh;
   --vw: 100vw;
 }
 

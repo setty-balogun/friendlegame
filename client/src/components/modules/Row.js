@@ -52,6 +52,19 @@ const Row = (props) =>{
         />
     ));
     useEffect(() => {
+
+        if(props.completed){
+            for(let i = 0; i < props.length; i++)
+            {
+                let delay = (i*.5).toString()+'s'
+                $(".Play-Tile").filter("#"+props.id.toString()+i.toString()).css("animation", "pulse-tile")
+                $(".Play-Tile").filter("#"+props.id.toString()+i.toString()).css("animation-delay", delay)
+                $(".Play-Tile").filter("#"+props.id.toString()+i.toString()).css("transition-delay", delay)
+                $(".Play-Tile").filter("#"+props.id.toString()+i.toString()).css("animation", "")
+                
+            }
+        }
+
         let right = true
         if(types.length !== props.length){
             right = false
@@ -64,11 +77,16 @@ const Row = (props) =>{
         if(right){
             //content.addClass("Play-TileVictory");
             setWin(true)
-            props.vic(props.id)
+            
 
         }
     },[types])
     
+    useEffect(() => {
+        if(win){
+            props.vic(props.id)
+        }
+    },[win])
 
     return(
         <div className = "Play-Row" key = {props.id} id = {props.id}>
