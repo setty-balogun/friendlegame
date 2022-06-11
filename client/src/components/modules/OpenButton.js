@@ -4,10 +4,12 @@ import "./CreateModal.css";
 
 const OpenButton = (props) => {
     const lt500 = useMediaPredicate("(max-width: 500px)");
+    const lt330 = useMediaPredicate("(max-width: 330px)");
 
     return (
         <>
-            {lt500 && <span onClick = {props.onClick} className = "startButton sz"> {props.text} </span>}
+            {(lt330 && lt500) && <span onClick = {props.onClick} className = "startButton szSmall"> {props.text} </span>}
+            {(lt500 && !lt330) && <span onClick = {props.onClick} className = "startButton sz"> {props.text} </span>}
             {!lt500 && <span onClick = {props.onClick} className = "startButton szLarge"> {props.text} </span>}
         </>
     );

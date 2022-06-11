@@ -8,17 +8,17 @@
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    
 }
 
 .Nav-icon{
     width: 700px;
     height: 80px;
     display: flex;
+    flex-direction: row;
     align-items: center;
+    justify-content: center;
     background-color: var(--bgwhite);
     border-bottom: 1.5px solid #DAD9D9;
-
 }
 
 .Nav-Logo{
@@ -36,8 +36,6 @@
     font-size: 18px;
     font-weight: 1000;
     padding-top: 2px;
-    
-    
 }
 
 .anothercont {
@@ -46,10 +44,25 @@
     margin-right: auto;
     margin-left: auto;
     gap: 3px;
-    width:700px;
+    width:400px;
     align-items: stretch;
     height: 38px;
+}
 
+.uhright {
+    display: flex;
+    flex-direction: row;
+    width: 150px;
+    height: 38px;
+    justify-content: right;
+    align-items: right;
+}
+
+.uhleft {
+    display: flex;
+    flex-direction: row;
+    width: 150px;
+    height: 38px;
 }
 
 .green{
