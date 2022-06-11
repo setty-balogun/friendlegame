@@ -25,6 +25,13 @@
     font-size: 25px;
 }
 
+.szSmall {
+    width: 80vw;
+    height: 8vh;
+    line-height: 9vh;
+    font-size: 20px;
+}
+
 .startButton:hover {
     color: var(--white);
     text-decoration: none;
@@ -75,8 +82,19 @@
     letter-spacing: 0.5px;
     margin-top: 5vh;
     color: #737373; 
-    font-size: 30px;
     position: relative;
+}
+
+.jMHeaderSz {
+    font-size: 30px;
+}
+
+.jMHeaderSzSmall {
+    font-size: 25px;
+}
+
+.jMHeaderSzSmaller {
+    font-size: 17px;
 }
 
 .joinModal-Underline {
@@ -95,8 +113,19 @@
     text-align: 'left';
     padding: .5rem;
     margin-top: 30px;
-    width: 270px;
     margin-bottom: 10px;
+}
+
+.inpSizeDefault {
+    width: 270px;
+}
+
+.inpSizeSmall {
+    width: 80vw;
+}
+
+.inpSizeSmaller {
+    width: 70vw;
 }
 
 .redirButton {
@@ -132,6 +161,50 @@
 .redirButton:hover {
     color: var(--white);
     text-decoration: none;
+	animation: pulse-dark 2s infinite;
+    cursor: pointer;
+}
+
+.howToButton {
+    margin-left: 30px;
+    display: flex;
+    box-shadow: 0 4px 0 0 #b4b4b4;
+    border-radius: 7px;
+    height: 40px;
+    width: 40px;
+
+    background-position-y: center;
+    background-position-x: center;
+    background-repeat: no-repeat;
+
+    background-size: cover;
+
+    background-image: url("../../public/howto3.png");
+}
+
+.howToButton:hover {
+	animation: pulse-dark 2s infinite;
+    cursor: pointer;
+}
+
+.settingsButton {
+    margin-right: 30px;
+    display: flex;
+    box-shadow: 0 4px 0 0 #b4b4b4;
+    border-radius: 7px;
+    height: 40px;
+    width: 40px;
+
+    background-position-y: center;
+    background-position-x: center;
+    background-repeat: no-repeat;
+
+    background-size: cover;
+
+    background-image: url("../../public/settings2.png");
+}
+
+.settingsButton:hover {
 	animation: pulse-dark 2s infinite;
     cursor: pointer;
 }

@@ -6,12 +6,14 @@ import "./CreateModal.css";
 import OpenButton from "./OpenButton.js";
 import RedirectButton from "./RedirectButton.js";
 import { get, post } from "../../utilities";
+import { useMediaPredicate } from "react-media-hook";
 
 const CreateModal = (props) => {
     const [visible, setVisibility] = useState(false);
     const handleOpen = () => { setVisibility(true) };
     const handleClose = () => { setVisibility(false) };
-    const [set, isSet] = useState(false);
+    const lt330 = useMediaPredicate("(max-width: 330px)");
+    const lt250 = useMediaPredicate("(max-width: 250px)");
 
     const handleSubmit = () => {
         console.log(document.getElementById('only').value);
@@ -47,9 +49,13 @@ const CreateModal = (props) => {
            
             <Modal className="width modalDef" centered="true" show={visible} onHide={handleClose}>
                 <Modal.Body> 
-                    <div className="joinModal-Header">Enter Valid Word:</div>
+                    {!lt330 && <div className="joinModal-Header jMHeaderSz">Enter Valid Word:</div>}
+                    {(lt330 && !lt250) && <div className="joinModal-Header jMHeaderSzSmall">Enter Valid Word:</div>}
+                    {(lt330 && lt250) && <div className="joinModal-Header jMHeaderSzSmaller">Enter Valid Word:</div>}
                     <div className="joinModal-Underline"></div>
-                    <input id="only" type="email" className="joinInp border block rounded" placeholder="Enter word..." />
+                    {!lt330 && <input id="only" type="email" className="joinInp inpSizeDefault border block rounded" placeholder="Enter word..." />}
+                    {(lt330 && !lt250) && <input id="only" type="email" className="joinInp inpSizeSmall border block rounded" placeholder="Enter word..." />}
+                    {(lt330 && lt250) && <input id="only" type="email" className="joinInp inpSizeSmaller border block rounded" placeholder="Enter word..." />}
                     <RedirectButton className="margredir" text={'Submit'} onClick={handleSubmit}> </RedirectButton>
 
 
