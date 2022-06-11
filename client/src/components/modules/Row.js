@@ -11,13 +11,10 @@ const Row = (props) =>{
     let typtemp = [];
     useEffect(() => {
         setWord(props.word.split(''));
-        //console.log(props.id)
     },[props])
     useEffect(() => {
-        console.log(props.state)
         if(!props.state){
             setTypes(['Inactive','Inactive','Inactive','Inactive','Inactive'])
-            //console.log("get fucked");
         }else if(props.completed)
         {
             setTypes(props.check(props.word,props.id))
@@ -35,13 +32,11 @@ const Row = (props) =>{
                 }
             }
             typtemp[word.indexOf(' ')] = 'Active'
-            //console.log(typtemp);
             setTypes(typtemp);
         }
     },[word])
     //make all word arrays the length of a row
     let content = null;
-    //console.log(types);
     content = [...Array(props.length).keys()].map((index) => (
         <Tile
             value = {word[index]}

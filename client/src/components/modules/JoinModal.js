@@ -23,7 +23,7 @@ const JoinModal = (props) => {
                 }, 1000);
                 document.getElementById('only').classList.add('wiggle');
             } else {
-                window.location.href = '/play/:inp';
+                window.location.href = '/play/'+inp;
             }
         });
     }

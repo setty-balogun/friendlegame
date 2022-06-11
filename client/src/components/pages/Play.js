@@ -17,11 +17,11 @@ const Play = (props) => {
     //counts for letters in secret word
     const wordLength = 5;
 
-    /*useEffect(() => {
-        get("/api/gamecodes").then((word)=>{
-            setSecretWord(word)
+    useEffect(() => {
+        get("/api/gamecodes", {code: props.code}).then((obj)=>{
+            setSecretWord((obj[0].word).toUpperCase())
         })
-    }, []);*/
+    }, []);
 
     const victory = (row) => {
         console.log("You Win");
@@ -32,7 +32,6 @@ const Play = (props) => {
             $(".Play-Tile").filter("#"+row.toString()+i.toString()).css("animation-delay", delay)
             
         }
-        console.log($(".Play-Tile").filter("#"+(Number(row)+1).toString()+"0"))
         $(".Play-Tile").filter("#"+(Number(row)+1).toString()+"0").removeClass("Active")
         $(".Play-Tile").filter("#"+(Number(row)+1).toString()+"0").addClass("Inactive")
     }
@@ -42,12 +41,11 @@ const Play = (props) => {
         var a = 97;
         for (var i = 0; i<26; i++)
             temp[String.fromCharCode(a + i).toUpperCase()] = 0;
-        for(let l of secretWord){
-            temp[l]+=1
+        for(let l = 0; l < secretWord.length; l++){
+            temp[secretWord[l]]+=1
         }
-        console.log(temp)
         setSW(temp)
-    }, []);
+    }, [secretWord]);
 
     const check = (str, row) => {
         let res = []
@@ -109,6 +107,8 @@ const Play = (props) => {
         for(let i = 0; i<  res.length; i++){
             //res[i] = res[i] + " Play-TileVictory "
         }
+        //$(".Play-KeyTile").css("transtion-delay", 2.5)
+        //$(".Play-KeyTile").css("transtion-delay", 0)
         return(res)
     }
     useEffect(() => {
@@ -177,7 +177,17 @@ const Play = (props) => {
                     }else if(x == 1){
                         //compare to valid word database here
                         // placeholder for check function
-                        setCompleted(true);
+
+                        get("/api/words", {word: wordString.slice(-wordLength).toLowerCase()}).then((words) => {
+                            if (words.length === 0) {
+                                setTimeout(() => {
+                                    $(".Play-Row").filter("#"+(Math.floor(wordString.length/wordLength)-1).toString()).removeClass("wiggle")
+                                }, 1000);
+                                $(".Play-Row").filter("#"+(Math.floor(wordString.length/wordLength)-1).toString()).addClass("wiggle")
+                            } else {
+                                setCompleted(true);  
+                            }   
+                        });
                     }else{
                         return;
                     }
@@ -252,6 +262,7 @@ const Play = (props) => {
             window.removeEventListener('keyup', handle)
         }
     }, [handleClick])
+
 
     
     

@@ -3,18 +3,15 @@ import "../pages/Play.css";
 
 const Tile = (props) =>{
     const [w, setW] = useState('false');
-    //type to be implemented
-    //console.log(props.type);
+
 
     useEffect(() => {
-        console.log(props.id)
     },[])
 
     useEffect(() => {
         if(props.win){
             setW('true');
         }
-        console.log(props.win) 
     },[props.win])
     
 

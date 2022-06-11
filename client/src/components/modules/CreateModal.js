@@ -34,7 +34,7 @@ const CreateModal = (props) => {
                 localStorage.setItem("code", gen);
                 console.log(gen);
                 post("/api/gamecodes", body).then(()=> {
-                    window.location.href = '/create/:code';
+                    window.location.href = '/create/'+gen.toString();
                 });
             }   
         });

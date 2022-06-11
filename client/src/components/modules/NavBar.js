@@ -7,6 +7,9 @@ import "../../utilities.css";
 
 const NavBar = (props) => {
   let title = ('FRIENDLE').split('');
+  const handleClick = () => {
+    window.location.href = '/';
+  }
   let frien = title.slice(0,5).map((w) => (
     <div className = "Nav-Logo green">
         {w}
@@ -22,7 +25,7 @@ let dle = title.slice(5).map((w) => (
 let friendle = frien.concat(dle);
   return (
     <>
-    <div className = "Nav-Container">
+    <div className = "Nav-Container" onClick = {handleClick}>
       <div className="Nav-icon">
         <div className="anothercont">
           {friendle}

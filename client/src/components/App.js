@@ -48,8 +48,8 @@ const App = () => {
       <NavBar />
       <Router className = "App-Container" code={code}>
           <Skeleton path="/" setCode={setCode} code={code}/>
-          <Create path="/create/:codeID" code={code} />
-          <Play path="/play" code={code}/>
+          <Create path="/create/:code" code={code} />
+          <Play path="/play/:code" code={code}/>
           <NotFound default />
       </Router>
     </>
