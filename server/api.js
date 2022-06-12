@@ -13,6 +13,7 @@ const express = require("express");
 const User = require("./models/user");
 const GameCode = require("./models/gamecode");
 const Word = require("./models/word");
+const History = require("./models/history");
 
 // import authentication library
 const auth = require("./auth");
@@ -60,6 +61,10 @@ router.get("/allWords", (req, res) => {
   Word.find({}).then((words) => res.send(words));
 });
 
+router.get("/history", (req, res) => {
+  History.find({id : req.query.id}).then((obj) => res.send(obj.history));
+});
+
 router.post("/gamecodes", (req, res) => {
   const newGameCode = new GameCode({
     code: req.body.code,
@@ -67,6 +72,16 @@ router.post("/gamecodes", (req, res) => {
   })
   newGameCode.save().then((gamecode) => res.send(gamecode));
 });
+
+router.post("/history", (req, res) => {
+  const newHistory = new ({
+    code: req.body.code,
+    word: req.body.word,
+  })
+  newHistory.save().then((history) => res.send(history));
+});
+//figure this out, updationg collecitions usung update function
+
 
 // anything else falls to this "not found" case
 router.all("*", (req, res) => {

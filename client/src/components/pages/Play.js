@@ -21,6 +21,10 @@ const Play = (props) => {
         get("/api/gamecodes", {code: props.code}).then((obj)=>{
             setSecretWord((obj[0].word).toUpperCase())
         })
+        /*let t = localStorage.getItem('ws')
+        if(t){
+            setWs(t)
+        }*/
     }, []);
 
     const victory = (row) => {
@@ -145,6 +149,7 @@ const Play = (props) => {
     }, [words, completed]);
 
     useEffect(() => {
+        //localStorage.setItem('ws', wordString)
         let temp = wordString;
         while(temp.length < wordLength*6){
             temp = temp+' ';

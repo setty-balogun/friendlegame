@@ -43,6 +43,17 @@ const App = () => {
     post("/api/logout");
   };
 
+  useEffect(() => {
+    let id =  localStorage.getItem('id')
+    if(!id){
+      id = ''
+      for (let i = 0; i < 10; i++) {
+          id += String.fromCharCode(Math.floor(Math.random() * (91 - 65) + 65));
+      }
+      localStorage.setItem('id',id)
+    }
+  }, []);
+
   return (
     <>
       <NavBar />
