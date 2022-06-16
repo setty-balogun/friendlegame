@@ -15,7 +15,7 @@
     text-align: center;
     font-family: 'Manrope', sans-serif;
     letter-spacing: 0.5px;
-    color: #7E7D7D; 
+    color: var(--darkgrey); 
     margin-top: 40px;
 }
 
@@ -37,7 +37,7 @@
     text-align: center;
     font-family: 'Manrope', sans-serif;
     letter-spacing: 0.5px;
-    color: #7E7D7D; 
+    color: var(--darkgrey); 
     margin-left: auto;
     margin-right: auto;
 }
@@ -66,7 +66,7 @@
     text-align: center;
     font-family: 'Manrope', sans-serif;
     letter-spacing: 0.5px;
-    color: #424242; 
+    color: var(--blackgrey); 
     font-weight: 700;
     margin-left: auto;
     margin-right: auto;
@@ -76,6 +76,7 @@
     display: flex;
     margin-left: auto;
     margin-right: auto;
+    background-color: var(--create-cont-color);
 }
 
 .qrDefault {
@@ -92,12 +93,12 @@
     margin-top: -5px;
     width: 70px;
     height: 3px;
-    background-color: #DADADA;
+    background-color: var(--underline-color);
     display: flex;
 }
 
 .containerQR {
-    background: var(--white);
+    background: var(--create-cont-color);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -109,7 +110,7 @@
     border-radius: 16px;
     width: 450px;
     height: 390px;
-    box-shadow: 0 7px 0 0 #DADADA;
+    box-shadow: 0 7px 0 0 var(--create-cont-shadow);
 }
 
 .qrContSmall {
@@ -118,11 +119,11 @@
     border-radius: 10px;
     width: 90vw;
     height: 80vw;
-    box-shadow: 0 5px 0 0 #DADADA;
+    box-shadow: 0 5px 0 0 var(--create-cont-shadow);
 }
 
 .containerLink {
-    background: var(--white);
+    background: var(--create-cont-color);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -136,7 +137,7 @@
     padding: 20px;
     width: 450px;
     height: 120px;
-    box-shadow: 0 7px 0 0 #DADADA;
+    box-shadow: 0 7px 0 0 var(--create-cont-shadow);
 }
 
 .cLSmall {
@@ -146,7 +147,7 @@
     padding: 15px;
     width: 90vw;
     height: 25vw;
-    box-shadow: 0 5px 0 0 #DADADA;
+    box-shadow: 0 5px 0 0 var(--create-cont-shadow);
 }
 
 .containerText {
@@ -175,7 +176,7 @@
 .linkText {
     display: flex;
     flex-grow: 1;
-    background: #ECECEB;
+    background: var(--create-cont-shadow);
     border-radius: 5px;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -202,10 +203,10 @@
     font-family: 'Manrope', sans-serif;
     letter-spacing: 1px;
     color: var(--white); 
-    box-shadow: inset 0 -5px 0 0 #6FA55F;
+    box-shadow: inset 0 -5px 0 0 var(--tilegreenshadow);
 	transform: scale(1);
     justify-content: center;
-    background: #70B25C;
+    background: var(--tilegreen);
     text-align: center;
 }
 

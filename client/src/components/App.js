@@ -29,6 +29,12 @@ const App = () => {
     });
   }, []);
 
+  useEffect(() => {
+    if (localStorage.getItem("checked-dm") === "true") {
+      document.body.classList.add("dark-mode");
+    } 
+  }, []);
+
   const handleLogin = (res) => {
     console.log(`Logged in as ${res.profileObj.name}`);
     const userToken = res.tokenObj.id_token;
