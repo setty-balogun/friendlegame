@@ -27,12 +27,12 @@ const NavBar = (props) => {
 let friendle = frien.concat(dle);
   return (
     <>
-    <div className = "Nav-Container" onClick = {handleClick}>
+    <div className = "Nav-Container">
       <div className="Nav-icon">
         <div className="uhleft">
           <HowToModal />
         </div>
-        <div className="anothercont">
+        <div className="anothercont" onClick = {handleClick}>
           {friendle}
         </div>
         <div className="uhright">

@@ -1,12 +1,12 @@
 .startButton {
-    background: #70B25C;
+    background: var(--tilegreen);
 	border-radius: 12px;
     display: flex;
     text-align: center;
     font-family: 'Manrope', sans-serif;
     letter-spacing: 1px;
     color: var(--white); 
-    box-shadow: 0 6.5px 0 0 #6FA55F;
+    box-shadow: 0 6.5px 0 0 var(--tilegreenshadow);
 	transform: scale(1);
     justify-content: center;
 }
@@ -67,11 +67,10 @@
   .modalDef {
       justify-content: center;
       text-align: center;
-      
   }
   
   .modal-content {
-    background: #ECE8E6;
+    background: var(--bgwhite);
     height: 40vh;
   }
 
@@ -81,7 +80,7 @@
     font-family: 'Manrope', sans-serif;
     letter-spacing: 0.5px;
     margin-top: 5vh;
-    color: #737373; 
+    color: var(--darkgrey); 
     position: relative;
 }
 
@@ -100,7 +99,7 @@
 .joinModal-Underline {
     width: 70px;
     height: 3px;
-    background-color: #70B25C;
+    background-color: var(--tilegreen);
     position: relative;
     display: block;
     margin-left: auto;
@@ -129,7 +128,7 @@
 }
 
 .redirButton {
-    background: #70B25C;
+    background: var(--tilegreen);
 	border-radius: 6px;
     display: block;
     margin-left: auto;
@@ -138,7 +137,7 @@
     font-family: 'Manrope', sans-serif;
     letter-spacing: 1px;
     color: var(--white); 
-    box-shadow: 0 4px 0 0 #6FA55F;
+    box-shadow: 0 4px 0 0 var(--tilegreenshadow);
 	transform: scale(1);
     justify-content: center;
     margin-bottom: 30px;
@@ -168,7 +167,7 @@
 .howToButton {
     margin-left: 30px;
     display: flex;
-    box-shadow: 0 4px 0 0 #b4b4b4;
+    box-shadow: 0 3px 0 0 var(--navbar-buttonshadow);
     border-radius: 7px;
     height: 40px;
     width: 40px;
@@ -179,7 +178,7 @@
 
     background-size: cover;
 
-    background-image: url("../../public/howto3.png");
+    background-image: var(--howto);
 }
 
 .howToButton:hover {
@@ -190,7 +189,7 @@
 .settingsButton {
     margin-right: 30px;
     display: flex;
-    box-shadow: 0 4px 0 0 #b4b4b4;
+    box-shadow: 0 3px 0 0 var(--navbar-buttonshadow);
     border-radius: 7px;
     height: 40px;
     width: 40px;
@@ -201,10 +200,88 @@
 
     background-size: cover;
 
-    background-image: url("../../public/settings2.png");
+    background-image: var(--settings);
 }
 
 .settingsButton:hover {
 	animation: pulse-dark 2s infinite;
     cursor: pointer;
+}
+
+.settings-row {
+    margin: 5px;
+    display: flex;
+    flex-direction: row;
+    margin-right: auto;
+    margin-left: auto;
+    align-items: stretch;
+    justify-content: center;
+    text-align: center;
+}
+
+.settings-row-1 {
+    display: flex;
+    flex-grow: 1;
+    max-width: 100%;
+    font-family: 'Manrope', sans-serif;
+    font-size: 20px;
+    color: var(--darkgrey);
+    align-self: center;
+}
+
+.settings-row-2 {
+    display: flex;
+    flex-grow: 1;
+    font-family: 'Manrope', sans-serif;
+    font-size: 25px;
+    color: var(--darkgrey);
+    align-self: center;
+    justify-content: right;
+}
+
+.settings-row-size-def {
+    width: 400px;
+    height: 41px;
+    gap: 10px;
+}
+
+.settings-modalDef {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.settings-inp {
+	visibility: hidden;
+}
+
+label {
+    align-self: center;
+	cursor: pointer;
+	width: 43px;
+	height: 25px;
+	background: var(--darkgrey);
+	border-radius: 50px;
+	position: relative;
+}
+
+label:after {
+	content: '';
+	position: absolute;
+	top: 3.5px;
+	left: 4px;
+	width: 18px;
+	height: 18px;
+	background: var(--white);
+	border-radius: 34px;
+	transition: 0.3s;
+}
+
+.settings-inp:checked + label {
+	background: var(--tilegreen);
+}
+
+.settings-inp:checked + label:after {
+	left: 39px;
+	transform: translateX(-100%);
 }

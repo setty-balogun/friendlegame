@@ -40,5 +40,5 @@ width: 100%;
 
   background-size: cover;
 
-  background-image: url("../../public/or.png");
+  background-image: var(--or);
 }

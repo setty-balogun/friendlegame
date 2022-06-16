@@ -31,12 +31,12 @@ const Create = (props) => {
             {!lt500 && <div className="containerQR qrContDefault">
                 <div class="smallHeader sHDef">Your Friendle Code:</div>
                 <div class="codeText bold cTDef"> {localStorage.getItem("code")} </div>
-                <QRCodeSVG className="qr" size={256} value={"https://friendle.herokuapp.com/play/" + localStorage.getItem("code")} />
+                <QRCodeSVG className="qr" bgColor={'transparent'} size={256} value={"https://friendle.herokuapp.com/play/" + localStorage.getItem("code")} />
             </div> }
             {lt500 && <div className="containerQR qrContSmall">
                 <div class="smallHeader sHSmall">Your Friendle Code:</div>
                 <div class="codeText bold cTSmall"> {localStorage.getItem("code")} </div>
-                <QRCodeSVG className="qr qrSmall" value={"https://friendle.herokuapp.com/play/" + localStorage.getItem("code")} />
+                <QRCodeSVG className="qr qrSmall" bgColor={'transparent'} value={"https://friendle.herokuapp.com/play/" + localStorage.getItem("code")} />
             </div> }
             {!lt500 && <div className="containerLink cLDef">
                 <div class="smallHeader sHDef">Share Link:</div>
