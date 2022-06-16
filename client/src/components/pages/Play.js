@@ -4,6 +4,7 @@ import "./Play.css";
 import Row from "../modules/Row.js";
 import { get, post } from "../../utilities";
 import $ from "jquery";
+import { Router } from "@reach/router";
 
 const Play = (props) => {
     const [rows, setRows] = useState([]);
@@ -18,13 +19,23 @@ const Play = (props) => {
     const wordLength = 5;
 
     useEffect(() => {
-        get("/api/gamecodes", {code: props.code}).then((obj)=>{
+        let c = props.code
+        get("/api/gamecodes", {code: [c]}).then((obj)=>{
             setSecretWord((obj[0].word).toUpperCase())
         })
-        /*let t = localStorage.getItem('ws')
-        if(t){
-            setWs(t)
-        }*/
+        let hist = localStorage.getItem(props.code);
+        console.log(hist)
+        if(hist){
+            setWs(hist)
+        }
+        /*get("/api/history", {id: localStorage.getItem('id'), code: [c]}).then((obj) => {
+            //check if obj contains word code
+            console.log(obj)
+            console.log(obj["$$c"])
+            if(obj[c]){
+                setWs(obj[c])
+            }
+        })*/
     }, []);
 
     const victory = (row) => {
@@ -159,7 +170,10 @@ const Play = (props) => {
         for (let i = 0, charsLength = temp.length; i < charsLength; i += wordLength) {
             temp2.push(temp.substring(i, i + wordLength));
         }
+
         setWords(temp2);
+        //post("/api/updateHistory", {id: localStorage.getItem('id'), code: props.code, ws: wordString}).then(() => console.log("updated"))
+        localStorage.setItem(props.code,wordString);
     }, [wordString]);
 
     let keysR1 = ('QWERTYUIOP').split('')

@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
 
 const HistorySchema = new mongoose.Schema({
-    id: String,
-    history: Array,
+    user: String,
+    curr: String
 })
 
 module.exports = mongoose.model("history", HistorySchema);

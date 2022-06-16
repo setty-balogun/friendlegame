@@ -51,6 +51,7 @@ const App = () => {
           id += String.fromCharCode(Math.floor(Math.random() * (91 - 65) + 65));
       }
       localStorage.setItem('id',id)
+      //post("/api/history", {id: id, code: "Sama", ws: "Sett"})
     }
   }, []);
 
