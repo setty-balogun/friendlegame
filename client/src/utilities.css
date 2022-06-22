@@ -46,14 +46,15 @@
   --keytilewhiteshadow: #c4bfbd;
   --lettergrey: var(--tilegrey);
   --tilewhiteshadow: rgb(199, 198, 198);
+  --textcolor: rgb(0, 0, 0);
 
   --xs: 4px;
   --s: 8px;
   --m: 16px;
   --l: 24px;
-  --navvh: 5vh;
-  --vh: 92vh;
-  --vhh: 46vh;
+  --navvh: 10vh;
+  --vh: 90vh;
+  --vhh: 45vh;
   --vw: 100vw;
 
   --howto: url("/client/src/public/howto-light.png");
@@ -72,6 +73,11 @@
   --create-cont-shadow: #DADADA;
   --underline-color: var(--blackgrey);
   --navbar-buttonshadow: var(--darkgrey);
+  --letterwhite: #000000;
+  --tilewhiteshadow: rgb(27, 27, 27);
+  --textcolor: #fff;
+  --keytilewhite: #616161;
+  --keytilewhiteshadow: rgb(74, 74, 74);
 
   --howto: url("/client/src/public/howto-dark.png");
   --settings: url("/client/src/public/settings-dark.png");
