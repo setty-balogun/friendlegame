@@ -27,6 +27,7 @@ const Play = (props) => {
         console.log(hist)
         if(hist){
             setWs(hist)
+            //setGuessed(localStorage.getItem(props.code+"0"))
         }
         /*get("/api/history", {id: localStorage.getItem('id'), code: [c]}).then((obj) => {
             //check if obj contains word code
@@ -62,9 +63,11 @@ const Play = (props) => {
         setSW(temp)
     }, [secretWord]);
 
+
     const check = (str, row) => {
         let res = []
         let gw = {...sw}
+        console.log(guessed)
         let guess = {...guessed}
         let seen = [];
         for( let i = 0; i < str.length; i++){
@@ -111,7 +114,13 @@ const Play = (props) => {
             }
             
         }
-        setGuessed(guess)
+        if(Object.keys(guessed).length <= Object.keys(guess).length){
+            setGuessed(guess)
+        }
+        if((wordString.length)%5 == 0 && completed){
+            localStorage.setItem(props.code,wordString);
+            //localStorage.setItem(props.code+"0",guessed)
+        }
         /*for(let i = 0; i < wordLength; i++)
         {
             let delay = (i*.2).toString()+'s'
@@ -134,8 +143,8 @@ const Play = (props) => {
             console.log(words.indexOf(word));
         }
 
-        let states = [false, false, false, false, false, false];
-        for (let i = 0; i < 6; i++) {
+        let states = [false, false, false, false, false, false, false];
+        for (let i = 0; i < 7; i++) {
             if (i <= active) { states[i] = true; } 
             if ((!completed && i<=active && active%1==0) && !(!completed && (i+1)<=active && active%1==0)) {
                 states[i] = false;
@@ -157,10 +166,9 @@ const Play = (props) => {
         ));
         
         setRows(rows);
-    }, [words, completed]);
+    }, [words, completed, sw]);
 
     useEffect(() => {
-        //localStorage.setItem('ws', wordString)
         let temp = wordString;
         while(temp.length < wordLength*6){
             temp = temp+' ';
@@ -173,7 +181,6 @@ const Play = (props) => {
 
         setWords(temp2);
         //post("/api/updateHistory", {id: localStorage.getItem('id'), code: props.code, ws: wordString}).then(() => console.log("updated"))
-        localStorage.setItem(props.code,wordString);
     }, [wordString]);
 
     let keysR1 = ('QWERTYUIOP').split('')

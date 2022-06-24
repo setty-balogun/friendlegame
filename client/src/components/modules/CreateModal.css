@@ -71,7 +71,7 @@
   
   .modal-content {
     background: var(--bgwhite);
-    height: 40vh;
+    height: fit-content;
   }
 
   .joinModal-Header {
@@ -284,4 +284,8 @@ label:after {
 .settings-inp:checked + label:after {
 	left: 39px;
 	transform: translateX(-100%);
+}
+
+.scroll{
+    overflow-y: scroll;
 }
