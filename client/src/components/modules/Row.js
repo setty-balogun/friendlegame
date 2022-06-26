@@ -1,3 +1,5 @@
+
+
 import React, { useState, useEffect } from "react";
 import "../pages/Play.css";
 import Tile from "./Tile.js";
@@ -47,7 +49,7 @@ const Row = (props) =>{
         />
     ));
     useEffect(() => {
-        console.log(types);
+
         if(props.completed){
             for(let i = 0; i < props.length; i++)
             {
