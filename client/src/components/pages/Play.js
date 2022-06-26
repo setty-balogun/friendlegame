@@ -44,8 +44,7 @@ const Play = (props) => {
         {
             let delay = (i*.2+3).toString()+'s'
             $(".Play-Tile").filter("#"+row.toString()+i.toString()).addClass("Play-TileVictory")
-            $(".Play-Tile").filter("#"+row.toString()+i.toString()).css("animation-delay", delay)
-            
+            $(".Play-Tile").filter("#"+row.toString()+i.toString()).css("animation-delay", delay)   
         }
         $(".Play-Tile").filter("#"+(Number(row)+1).toString()+"0").removeClass("Active")
         $(".Play-Tile").filter("#"+(Number(row)+1).toString()+"0").addClass("Inactive")
@@ -129,7 +128,10 @@ const Play = (props) => {
     useEffect(() => {
 
         let active = (wordStringL.indexOf(' ')/wordLength < 0) ? 6 : (wordStringL.indexOf(' ')/wordLength);
-        console.log('active ' + active);
+        for (let i = 0; i < 6; i++) {
+            console.log(guessed[i]);
+        }
+        
         for (let word in words) {
             console.log(words.indexOf(word));
         }

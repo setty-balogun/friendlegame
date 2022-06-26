@@ -47,7 +47,7 @@ const Row = (props) =>{
         />
     ));
     useEffect(() => {
-
+        console.log(types);
         if(props.completed){
             for(let i = 0; i < props.length; i++)
             {
