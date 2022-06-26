@@ -71,7 +71,7 @@
   
   .modal-content {
     background: var(--bgwhite);
-    height: 40vh;
+    height: fit-content;
   }
 
   .joinModal-Header {
@@ -306,4 +306,8 @@ label:after {
 .statsButton:hover {
 	animation: pulse-dark 2s infinite;
     cursor: pointer;
+}
+
+.scroll {
+    overflow-y: scroll;
 }
