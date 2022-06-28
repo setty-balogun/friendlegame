@@ -79,3 +79,42 @@
     box-shadow: 0 4px 0 0 var(--tileyellowshadow);
 }
 
+.grey{
+    background-color: var(--tilegrey);
+    box-shadow: 0 4px 0 0 var(--tilegreyshadow);
+}
+
+p {
+    text-align: left;
+    margin-bottom: 2%;
+    width: 100%;
+    line-height: 1.2;
+    color: var(--darkgrey);
+}
+
+.orr{
+    text-align: center;
+    width:50%;
+}
+
+.modalt{
+    margin: 1px;
+}
+
+p1 {
+    text-align: left;
+    margin-bottom: 2%;
+    width: 100%;
+    color: var(--textcolor);
+    opacity: 40%;
+    font-size: smaller;
+    line-height: 1;
+}
+
+.spacing{
+    height: 10px;
+}
+
+.spacingLarge{
+    height: 30px;
+}

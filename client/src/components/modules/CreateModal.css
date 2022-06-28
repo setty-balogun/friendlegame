@@ -84,6 +84,15 @@
     position: relative;
 }
 
+.joinModal-SubHeader {
+    
+    text-align: center;
+    font-family: 'Manrope', sans-serif;
+    letter-spacing: 0.5px;
+    color: var(--darkgrey); 
+    position: relative;
+}
+
 .jMHeaderSz {
     font-size: 30px;
 }
@@ -104,6 +113,7 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 10px;
 
 }
 
@@ -288,4 +298,48 @@ label:after {
 
 .scroll{
     overflow-y: scroll;
+}
+
+.columns{
+    display: flex;
+    flex-direction: row;
+}
+
+.column{
+    width: 50%;
+    justify-content: center;
+}
+
+.startButtonM{
+    background: var(--tilegreen);
+	border-radius: 12px;
+    display: flex;
+    text-align: center;
+    font-family: 'Manrope', sans-serif;
+    letter-spacing: 1px;
+    color: var(--white); 
+    box-shadow: 0 6.5px 0 0 var(--tilegreenshadow);
+	transform: scale(1);
+    width: 1fr;
+    height: 30%;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5px;
+}
+
+.shareButtonM{
+    background: var(--tilegrey);
+	border-radius: 12px;
+    display: flex;
+    text-align: center;
+    font-family: 'Manrope', sans-serif;
+    letter-spacing: 1px;
+    color: var(--white); 
+    box-shadow: 0 6.5px 0 0 var(--tilegreyshadow);
+	transform: scale(1);
+    width: 1fr;
+    height: 30%;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5px;
 }

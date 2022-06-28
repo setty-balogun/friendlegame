@@ -12,7 +12,7 @@ const Play = (props) => {
     const [wordString, setWs] = useState('');
     const [wordStringL, setWsl] = useState('');
     const [completed, setCompleted] = useState(true);
-    const [secretWord, setSecretWord] = useState('SHORT');
+    const [secretWord, setSecretWord] = useState('');
     const [guessed, setGuessed] = useState({});
     const [sw, setSW] = useState({});
     //counts for letters in secret word
@@ -38,6 +38,15 @@ const Play = (props) => {
             }
         })*/
     }, []);
+
+    function sleep(milliseconds) {
+        var start = new Date().getTime();
+        for (var i = 0; i < 1e7; i++) {
+          if ((new Date().getTime() - start) > milliseconds){
+            break;
+          }
+        }
+      }
 
     const victory = (row) => {
         console.log("You Win");
@@ -67,26 +76,18 @@ const Play = (props) => {
     const check = (str, row) => {
         let res = []
         let gw = {...sw}
-        console.log(guessed)
-        let guess = {...guessed}
+        let y =  'abcdefghijklmnopqrstuvwxyz'.split('')
         let seen = [];
         for( let i = 0; i < str.length; i++){
             let word = secretWord
             let letter = str[i]
             let sletter = word[i]
             if(word.indexOf(letter) === -1){
-                res.push(['Grey'])
-                if(guess[letter] !== 'Green' && guess[letter] !== 'Yellow'){
-                    guess[letter] = 'Grey'
-                }     
+                res.push(['Grey'])     
             }else if(letter === sletter){
                 res.push(['Green'])
-                guess[letter] = 'Green'
             }else{
                 res.push(['Yellow'])
-                if(guess[letter] !== 'Green'){
-                    guess[letter] = 'Yellow'
-                }
             }
             gw[letter]-=1;
         }
@@ -114,27 +115,16 @@ const Play = (props) => {
             }
             
         }
-        if(Object.keys(guessed).length <= Object.keys(guess).length){
-            setGuessed(guess)
-        }
+       
         if((wordString.length)%5 == 0 && completed){
             localStorage.setItem(props.code,wordString);
-            //localStorage.setItem(props.code+"0",guessed)
         }
-        /*for(let i = 0; i < wordLength; i++)
-        {
-            let delay = (i*.2).toString()+'s'
-            $(".Play-Tile").filter("#"+row.toString()+i.toString()).addClass("Play-TileVictory")
-            $(".Play-Tile").filter("#"+row.toString()+i.toString()).css("animation-delay", delay)
-            
-        }*/
-        for(let i = 0; i<  res.length; i++){
-            //res[i] = res[i] + " Play-TileVictory "
-        }
-        //$(".Play-KeyTile").css("transtion-delay", 2.5)
-        //$(".Play-KeyTile").css("transtion-delay", 0)
+        keycolors()
         return(res)
     }
+
+
+
     useEffect(() => {
 
         let active = (wordStringL.indexOf(' ')/wordLength < 0) ? 6 : (wordStringL.indexOf(' ')/wordLength);
@@ -180,7 +170,6 @@ const Play = (props) => {
         }
 
         setWords(temp2);
-        //post("/api/updateHistory", {id: localStorage.getItem('id'), code: props.code, ws: wordString}).then(() => console.log("updated"))
     }, [wordString]);
 
     let keysR1 = ('QWERTYUIOP').split('')
@@ -206,6 +195,13 @@ const Play = (props) => {
 
                         get("/api/words", {word: wordString.slice(-wordLength).toLowerCase()}).then((words) => {
                             if (words.length === 0) {
+                                $(".notify").toggleClass("activeNotif");
+                                $("#notifyType").toggleClass("invalid");
+                                
+                                setTimeout(function(){
+                                    $(".notify").removeClass("activeNotif");
+                                    $("#notifyType").removeClass("invalid");
+                                },1000);
                                 setTimeout(() => {
                                     $(".Play-Row").filter("#"+(Math.floor(wordString.length/wordLength)-1).toString()).removeClass("wiggle")
                                 }, 1000);
@@ -229,6 +225,17 @@ const Play = (props) => {
             }else if(x == 1){
                 //something to say word is not complete
                 //console.log("word not complete");
+                $(".notify").toggleClass("activeNotif");
+                $("#notifyType").toggleClass("invalid");
+                
+                setTimeout(function(){
+                    $(".notify").removeClass("activeNotif");
+                    $("#notifyType").removeClass("invalid");
+                },1000);
+                setTimeout(() => {
+                    $(".Play-Row").filter("#"+(Math.ceil(wordString.length/wordLength)-1).toString()).removeClass("wiggle")
+                }, 1000);
+                $(".Play-Row").filter("#"+(Math.ceil(wordString.length/wordLength)-1).toString()).addClass("wiggle")
             }else{
                 setWs(wordString+x);
             }
@@ -289,13 +296,36 @@ const Play = (props) => {
         }
     }, [handleClick])
 
-
-    
+    const keycolors = () => {
+        let guess = {}
+        for(let j = 0; j < Math.floor(wordString.length/wordLength); j++)
+        {
+            let str  = wordString.slice(wordLength*j,wordLength*j+wordLength)
+            for( let i = 0; i < str.length; i++){
+                let word = secretWord
+                let letter = str[i]
+                let sletter = word[i]
+                if(word.indexOf(letter) === -1){
+                    if(guess[letter] !== 'Green' && guess[letter] !== 'Yellow'){
+                        guess[letter] = 'Grey'
+                    }     
+                }else if(letter === sletter){
+                    guess[letter] = 'Green'
+                }else{
+                    if(guess[letter] !== 'Green'){
+                        guess[letter] = 'Yellow'
+                    }
+                }
+            }
+        }
+        setGuessed(guess)
+    }
     
 
     return(
         <>
         <div className="Play-Container">
+        <div class="notify"><span id="notifyType" class=""></span></div>
             <div className = "Play-BoardContainer">
                 <div className = "Play-Board">
                     {rows}
