@@ -2,6 +2,7 @@ import { Link } from "@reach/router";
 import React, { useState, useEffect } from "react";
 import HowToModal from "../modules/HowToModal.js";
 import SettingsModal from "../modules/SettingsModal.js";
+import StatsModal from "../modules/StatsModal.js";
 import { get, post } from "../../utilities";
 
 import "./NavBar.css";
@@ -36,6 +37,7 @@ let friendle = frien.concat(dle);
           {friendle}
         </div>
         <div className="uhright">
+          <StatsModal />
           <SettingsModal />
         </div>
       </div>

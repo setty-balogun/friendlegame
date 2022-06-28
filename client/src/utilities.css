@@ -60,6 +60,7 @@
   --howto: url("/client/src/public/howto-light.png");
   --settings: url("/client/src/public/settings-light.png");
   --or: url("/client/src/public/or-light.png");
+  --stats: url("/client/src/public/stats-light.png");
 }
 
 .dark-mode {
@@ -82,6 +83,7 @@
   --howto: url("/client/src/public/howto-dark.png");
   --settings: url("/client/src/public/settings-dark.png");
   --or: url("/client/src/public/or-dark.png");
+  --stats: url("/client/src/public/stats-dark.png");
 }
 
 .high-contrast {

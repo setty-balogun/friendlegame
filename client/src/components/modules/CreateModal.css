@@ -296,7 +296,29 @@ label:after {
 	transform: translateX(-100%);
 }
 
-.scroll{
+.statsButton {
+    margin-right: 5px;
+    display: flex;
+    box-shadow: 0 3px 0 0 var(--navbar-buttonshadow);
+    border-radius: 7px;
+    height: 40px;
+    width: 40px;
+
+    background-position-y: center;
+    background-position-x: center;
+    background-repeat: no-repeat;
+
+    background-size: cover;
+
+    background-image: var(--stats);
+}
+
+.statsButton:hover {
+	animation: pulse-dark 2s infinite;
+    cursor: pointer;
+}
+
+.scroll {
     overflow-y: scroll;
 }
 
