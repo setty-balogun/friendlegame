@@ -62,13 +62,14 @@ router.get("/allWords", (req, res) => {
 });
 
 router.get("/history", (req, res) => {
-  let code = req.body.code
-  History.aggregate([
+  /*History.aggregate([
     //{$match: {user : [req.query.id]}},
     {$set: {curr : 'hi'}}
   ]).then(() => {
   History.find({user : req.query.id}).then((obj) => res.send(obj));
-  });
+  });*/
+
+  History.find({user : req.query.user, code : req.query.code}).then((obj) => res.send(obj));
 
   /*History.findOneAndUpdate(
     {user: req.query.id},
@@ -90,7 +91,7 @@ router.post("/gamecodes", (req, res) => {
   newGameCode.save().then((gamecode) => res.send(gamecode));
 });
 
-router.post("/history", (req, res) => {
+/*router.post("/history", (req, res) => {
   let code = req.body.code;
   const newHistory = new History({
     user: req.body.id,
@@ -98,9 +99,17 @@ router.post("/history", (req, res) => {
     curr: "default"
   });
   newHistory.save().then((history) => res.send(history));
+});*/
+
+router.post("/history", (req, res) => {
+  const newHistory = new History({
+    user: req.body.user,
+    code: req.body.code,
+  })
+  newHistory.save().then((hist) => res.send(hist));
 });
 
-router.post("/updateHistory", (req,res) => {
+/*router.post("/updateHistory", (req,res) => {
   let code = req.body.code
   History.findOneAndUpdate(
     {user: req.body.id},
@@ -110,7 +119,7 @@ router.post("/updateHistory", (req,res) => {
       new: true,
       strict: false
     }
-  )
+  )*/
 
   /*History.aggregate( [
     {
@@ -120,7 +129,7 @@ router.post("/updateHistory", (req,res) => {
     }
 ] )*/
 
-});
+
 //figure this out, updationg collecitions usung update function
 
 

@@ -37,7 +37,7 @@ let friendle = frien.concat(dle);
           {friendle}
         </div>
         <div className="uhright">
-          <StatsModal />
+          <StatsModal finishedGame={props.finishedGame} gameData={props.gameData} />
           <SettingsModal />
         </div>
       </div>

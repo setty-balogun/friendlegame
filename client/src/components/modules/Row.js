@@ -4,12 +4,14 @@ import React, { useState, useEffect } from "react";
 import "../pages/Play.css";
 import Tile from "./Tile.js";
 import $ from "jquery";
+import { useSyncExternalStore } from "react";
 
 const Row = (props) =>{
     const [types, setTypes] = useState([]);
     //const [content, setContent] = useState([]);
     const [word, setWord] = useState(props.word.split('')); 
     const [win, setWin] = useState(false); 
+    const [lose, setLose] = useState(false); 
     let typtemp = [];
     useEffect(() => {
         setWord(props.word.split(''));
@@ -73,17 +75,29 @@ const Row = (props) =>{
         }
         if(right){
             //content.addClass("Play-TileVictory");
+            console.log("herrr");
             setWin(true)
             
 
+        } else {
+            if (props.id === "5" && props.completed && types.length === props.length) {
+                setLose(true)
+                console.log("?");
+            }
         }
     },[types])
     
     useEffect(() => {
         if(win){
-            props.vic(props.id)
+            props.vic(props.id);
         }
     },[win])
+
+    useEffect(() => {
+        if(lose){
+            props.loss();
+        }
+    },[lose])
 
     return(
         <div className = "Play-Row" key = {props.id} id = {props.id}>

@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const HistorySchema = new mongoose.Schema({
     user: String,
-    curr: String
+    code: String
 })
 
 module.exports = mongoose.model("history", HistorySchema);
