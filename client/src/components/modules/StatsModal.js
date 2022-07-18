@@ -14,6 +14,12 @@ const StatsModal = (props) => {
     const lt330 = useMediaPredicate("(max-width: 330px)");
     const lt280 = useMediaPredicate("(max-width: 280px)");
 
+    useEffect(() => {
+        if (props.finishedGame === true) {
+            handleOpen();
+        }
+    }, [props.finishedGame]);
+
     return (
         <>
         <div className="modalDef">
@@ -27,22 +33,25 @@ const StatsModal = (props) => {
                     <div className="joinModal-Underline"></div>
 
                     <div className="settings-row settings-row-size-def">
-                        <div className="settings-row-1">Dark Mode</div>
-                        <div className="settings-row-2">
-                            
-                        </div>
+                        <div className="settings-row-1">Percent Won</div>
+                        <div className="settings-row-2"> {props.gameData[2] === 0 ? 0 : Math.round(100 * props.gameData[0] / props.gameData[2])}% </div>
                     </div>
 
                     <div className="settings-row settings-row-size-def">
-                        <div className="settings-row-1">High Contrast</div>
-                        <div className="settings-row-2">
-                            
-                        </div>
+                        <div className="settings-row-1">Played</div>
+                        <div className="settings-row-2"> {props.gameData[2]} </div>
                     </div>
 
                     <div className="settings-row settings-row-size-def">
+                        <div className="settings-row-1">Current Streak</div>
+                        <div className="settings-row-2"> {props.gameData[3]} </div>
+                    </div>
+
+                    <div className="settings-row settings-row-size-def exmarg">
+                        <div className="settings-row-1">Best Streak</div>
+                        <div className="settings-row-2"> {props.gameData[4]} </div>
+                    </div>
                         
-                    </div>
                 </Modal.Body>
             </Modal>
         </div>
