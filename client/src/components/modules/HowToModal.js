@@ -64,11 +64,10 @@ const HowToModal = (props) => {
            
             <Modal className="width scroll" centered="true" show={visible} onHide={handleClose}>
                 <Modal.Body classname="scroll"> 
-                    {/*{!lt330 && <div className="joinModal-Header jMHeaderSz">How To Play</div>}
-                    {(lt330 && !lt280) && <div className="joinModal-Header jMHeaderSzSmall">How To Play</div>}
-    {(lt330 && lt280) && <div className="joinModal-Header jMHeaderSzSmaller">How To Play</div>}*/}
-                    {/*<div className="joinModal-Underline"></div>*/}
-                    <div className = "modal-dialog-scrollable">
+                    <div>
+                        hello
+                    </div>
+                    {/*<div className = "modal-dialog-scrollable">
                     <h2 className="joinModal-Header jMHeaderSz"> How To Create a Friendle</h2>
                     <div className="joinModal-Underline"></div>
                     <div className ="columns">
@@ -128,10 +127,10 @@ const HowToModal = (props) => {
                             <div className ="u-flex"> {greyex} </div>
                             <p1>Gray tiles contain letters that are not in the word.</p1>
                             <div className='spacing'></div>
-                            <div className ="u-flex"> {short} </div>
                         </div>
                     </div>
-                    </div>
+                    </div>*/}
+
                 </Modal.Body>
             </Modal>
         </div>
