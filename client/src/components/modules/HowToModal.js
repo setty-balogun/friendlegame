@@ -65,7 +65,7 @@ const HowToModal = (props) => {
             <Modal className="width scroll" centered="true" show={visible} onHide={handleClose}>
                 <Modal.Body classname="scroll"> 
                     <div>
-                        hello
+                        
                     </div>
                     {/*<div className = "modal-dialog-scrollable">
                     <h2 className="joinModal-Header jMHeaderSz"> How To Create a Friendle</h2>

@@ -1,4 +1,6 @@
 .sectionHead{
     color: var(--textcolor);
-    
+    justify-content: center;
+    align-items: center;
+    size: var(--sm)
 }
