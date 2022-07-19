@@ -61,6 +61,7 @@
   --settings: url("/client/src/public/settings-light.png");
   --or: url("/client/src/public/or-light.png");
   --stats: url("/client/src/public/stats-light.png");
+  --kex: url("/client/src/public/Keyboardex.png");
 }
 
 .dark-mode {
