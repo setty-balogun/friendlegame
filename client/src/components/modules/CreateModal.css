@@ -72,6 +72,8 @@
   .modal-content {
     background: var(--bgwhite);
     height: fit-content;
+    display: flex;
+    justify-content: center;
   }
 
   .joinModal-Header {

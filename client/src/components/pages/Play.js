@@ -25,7 +25,6 @@ const Play = (props) => {
             setSecretWord((obj[0].word).toUpperCase())
         })
         let hist = localStorage.getItem(props.code);
-        console.log(hist)
         if(hist){
             setWs(hist)
             //setGuessed(localStorage.getItem(props.code+"0"))
@@ -55,7 +54,6 @@ const Play = (props) => {
         let id = localStorage.getItem('id');
 
         get("/api/history", {user: id, code: props.code}).then((obj) => {
-            console.log("her");
             if (obj.length === 0) {
                 post("/api/history", {user: id, code: props.code});
 

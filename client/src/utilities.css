@@ -65,6 +65,7 @@
 }
 
 .dark-mode {
+  --tilewhite: #000000;
   --appbg: var(--blackgrey);
   --bgwhite: #2C2C2C;
   --tilegreen: #3a8b38;

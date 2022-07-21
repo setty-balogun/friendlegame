@@ -133,74 +133,8 @@ const HowToModal = (props) => {
                         <div className = "horline"></div>
                         <div className = "elems">Now have a good time and celebrate when you solve a freindle!</div>
                         <div className ="example"> {shot} </div>
-                       
                     </div>
-
-                    
                     <div className='spacing'></div>
-                    {/*<div className = "modal-dialog-scrollable">
-                    <h2 className="joinModal-Header jMHeaderSz"> How To Create a Friendle</h2>
-                    <div className="joinModal-Underline"></div>
-                    <div className ="columns">
-                        <div className ="column">
-                            <p>Click the “Create a Friendle” button</p>
-                            <div className='spacingLarge'></div>
-                            <p>Type a five letter word</p>
-                            <div className='spacingLarge'></div>
-                            <p>Share the link or QR code with a friend!</p>
-                        </div>
-                        <div className = "column">
-                            <div className = "startButtonM">
-                                Create a Friendle
-                            </div>
-                            <div className='spacingLarge'></div>
-                            <div className='spacingLarge'></div>
-                            <div className = "shareButtonM">
-                                Share Friendle
-                            </div>
-                        </div>
-                    </div>     
-                    <h2 className="joinModal-Header jMHeaderSz"> How to Join a Friendle </h2>
-                    <div className="joinModal-Underline"></div>
-                    <div className ="columns">
-                        <div className = "column">
-                            <p>Scan the QR code</p>
-                            <div className='spacingLarge'></div>
-                            <p className ="orr">-or-</p>
-                            <div className='spacingLarge'></div>
-                            <p>Click "Join a Friendle"</p>
-                        </div>
-                        <div className = "column">
-                            <QRCodeSVG className="qr" bgColor={'transparent'} size={128} value={"https://friendle.herokuapp.com/play/ISHRLULYAM"} />
-                        </div>
-                    </div>
-                    <h2 className="joinModal-Header jMHeaderSz">How To Play A Freindle</h2>
-                    <div className="joinModal-Underline"></div>
-                    <div className ="columns">
-                        <div className ="column">
-                            <h2 className="joinModal-SubHeader"> Rules </h2>
-                            <p>Guess the word within 6 attempts</p>
-                            <div className='spacingLarge'></div>
-                            <p>Every guess must be a valid five-letter word</p>
-                            <div className='spacingLarge'></div>
-                            <p>Hit enter to submit.</p>
-                            <div className='spacingLarge'></div>
-                            <p>After each guess, the color of the tiles will change to show how close your guess was to the word.</p>    
-                        </div>
-                        <div className = "column">
-                            <h2 className="joinModal-SubHeader"> Examples </h2>
-                            <div className ="u-flex"> {greenex} </div>
-                            <p1>Green tiles indicate the letter is in the correct spot.</p1>
-                            <div className='spacing'></div>
-                            <div className ="u-flex"> {yellowex} </div>
-                            <p1>Yellow tiles indicate the letter is in the word but in the wrong spot.</p1>
-                            <div className='spacing'></div>
-                            <div className ="u-flex"> {greyex} </div>
-                            <p1>Gray tiles contain letters that are not in the word.</p1>
-                            <div className='spacing'></div>
-                        </div>
-                    </div>
-                    </div>*/}
 
                 </Modal.Body>
             </Modal>

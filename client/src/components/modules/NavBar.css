@@ -25,8 +25,8 @@
     display:flex;
     align-items:center;
     justify-content: center;
-    background-color: var(--tilewhite);
-    box-shadow: 0 4px 0 0 var(--tilegrey);
+    background-color: var(--letterwhite);
+    box-shadow: 0 4px 0 0 var(--tilewhiteshadow);
     border-radius: 7px;
     opacity: 100%;
     max-width: 38px;
