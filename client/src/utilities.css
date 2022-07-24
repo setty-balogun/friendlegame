@@ -61,9 +61,11 @@
   --settings: url("/client/src/public/settings-light.png");
   --or: url("/client/src/public/or-light.png");
   --stats: url("/client/src/public/stats-light.png");
+  --kex: url("/client/src/public/Keyboardex.png");
 }
 
 .dark-mode {
+  --tilewhite: #000000;
   --appbg: var(--blackgrey);
   --bgwhite: #2C2C2C;
   --tilegreen: #3a8b38;
