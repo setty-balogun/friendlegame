@@ -184,8 +184,9 @@ const Play = (props) => {
        
         if((wordString.length)%5 == 0 && completed){
             localStorage.setItem(props.code,wordString);
+            keycolors()
         }
-        keycolors()
+        
         return(res)
     }
 
@@ -366,6 +367,7 @@ const Play = (props) => {
     }, [handleClick])
 
     const keycolors = () => {
+        console.log("ajjj");
         let guess = {}
         for(let j = 0; j < Math.floor(wordString.length/wordLength); j++)
         {
