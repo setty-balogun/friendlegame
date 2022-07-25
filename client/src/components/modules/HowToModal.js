@@ -98,7 +98,7 @@ const HowToModal = (props) => {
             <HowToButton onClick={handleOpen}> </HowToButton>
            
             <Modal className="width scroll" centered="true" show={visible} onHide={handleClose}>
-                <Modal.Body className="scroll"> 
+                <Modal.Body> 
                     <div>
                         <h2 className="joinModal-Header jMHeaderSz"> How To Play</h2>
                         <div className="joinModal-Underline"></div>
