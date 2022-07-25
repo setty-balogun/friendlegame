@@ -131,7 +131,7 @@ const HowToModal = (props) => {
                         <div className ="example"> {greyex} </div>
                         <div className='spacingLarge'></div>
                         <div className = "horline"></div>
-                        <div className = "elems">Now have a good time and celebrate when you solve a freindle!</div>
+                        <div className = "elems">Now have a good time and celebrate when you solve a Friendle!</div>
                         <div className ="example"> {shot} </div>
                     </div>
                     <div className='spacing'></div>
