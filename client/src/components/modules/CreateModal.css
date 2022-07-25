@@ -179,10 +179,6 @@
 .howToButton {
     margin-left: 30px;
     display: flex;
-    box-shadow: 0 3px 0 0 var(--navbar-buttonshadow);
-    border-radius: 7px;
-    height: 40px;
-    width: 40px;
 
     background-position-y: center;
     background-position-x: center;
@@ -193,6 +189,55 @@
     background-image: var(--howto);
 }
 
+.button-size-n {
+    box-shadow: 0 3px 0 0 var(--navbar-buttonshadow);
+    border-radius: 7px;
+
+    width: 40px;
+    height: 40px;
+
+    font-size: 18px;
+    padding-top: 2px;
+}
+
+.button-size-sm {
+    box-shadow: 0 3px 0 0 var(--navbar-buttonshadow);
+    border-radius: 5.5px;
+
+    width: 33px;
+    height: 33px;
+
+    font-size: 15px;
+    padding-top: 2px;
+
+    margin-top: 2.5px;
+}
+
+.button-size-sm2 {
+    box-shadow: 0 3px 0 0 var(--navbar-buttonshadow);
+    border-radius: 5px;
+
+    width: 27px;
+    height: 27px;
+
+    font-size: 15px;
+    padding-top: 2px;
+
+    margin-top: 3px;
+}
+
+.blankButton {
+    margin-left: 5px;
+    display: flex;
+    box-shadow: 0 3px 0 0 var(--bgwhite);
+
+    background-position-y: center;
+    background-position-x: center;
+    background-repeat: no-repeat;
+
+    background-size: cover;
+}
+
 .howToButton:hover {
 	animation: pulse-dark 2s infinite;
     cursor: pointer;
@@ -201,10 +246,6 @@
 .settingsButton {
     margin-right: 30px;
     display: flex;
-    box-shadow: 0 3px 0 0 var(--navbar-buttonshadow);
-    border-radius: 7px;
-    height: 40px;
-    width: 40px;
 
     background-position-y: center;
     background-position-x: center;
@@ -257,6 +298,13 @@
     gap: 10px;
 }
 
+.settings-row-size-sm {
+    width: 80vw;
+    height: 41px;
+    gap: 10px;
+}
+
+
 .settings-modalDef {
     display: flex;
     flex-direction: column;
@@ -301,10 +349,6 @@ label:after {
 .statsButton {
     margin-right: 5px;
     display: flex;
-    box-shadow: 0 3px 0 0 var(--navbar-buttonshadow);
-    border-radius: 7px;
-    height: 40px;
-    width: 40px;
 
     background-position-y: center;
     background-position-x: center;

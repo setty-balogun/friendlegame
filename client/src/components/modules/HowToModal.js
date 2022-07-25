@@ -24,57 +24,57 @@ const HowToModal = (props) => {
       ));
     let shot = (
         <>
-        <div className="Nav-Logo green modalt b1">S</div>
-        <div className="Nav-Logo green modalt b2">H</div>
-        <div className="Nav-Logo green modalt b3">O</div>
-        <div className="Nav-Logo green modalt b4">R</div>
-        <div className="Nav-Logo green modalt b5">T</div>
+        <div className="Nav-Logo green modalt b1 letter-size-n">S</div>
+        <div className="Nav-Logo green modalt b2 letter-size-n">H</div>
+        <div className="Nav-Logo green modalt b3 letter-size-n">O</div>
+        <div className="Nav-Logo green modalt b4 letter-size-n">R</div>
+        <div className="Nav-Logo green modalt b5 letter-size-n">T</div>
         </>  
         
       )
     let count = (
         <>
-        <div className="Nav-Logo green modalt g1">1</div>
-        <div className="Nav-Logo green modalt g2">2</div>
-        <div className="Nav-Logo green modalt g3">3</div>
-        <div className="Nav-Logo green modalt g4">4</div>
-        <div className="Nav-Logo green modalt g5">5</div>
-        <div className="Nav-Logo green modalt g6">6</div>
+        <div className="Nav-Logo green modalt g1 letter-size-n">1</div>
+        <div className="Nav-Logo green modalt g2 letter-size-n">2</div>
+        <div className="Nav-Logo green modalt g3 letter-size-n">3</div>
+        <div className="Nav-Logo green modalt g4 letter-size-n">4</div>
+        <div className="Nav-Logo green modalt g5 letter-size-n">5</div>
+        <div className="Nav-Logo green modalt g6 letter-size-n">6</div>
 
         </>  
         
       )
     
     let greenex1 = ("MALL".split('')).slice(0,4).map((w) => (
-        <div className = "Nav-Logo modalt grey">
+        <div className = "Nav-Logo modalt grey letter-size-n">
             {w}
         </div>   
       ));
     let greenex2 = ("S".split('')).map((w) => (
-        <div className = "Nav-Logo modalt green">
+        <div className = "Nav-Logo modalt green letter-size-n">
             {w}
         </div>   
       ));
     let greenex = greenex2.concat(greenex1)
 
     let yellowex1 = ("RUN".split('')).slice(0,3).map((w) => (
-        <div className = "Nav-Logo modalt grey">
+        <div className = "Nav-Logo modalt grey letter-size-n">
             {w}
         </div>   
       ));
       let yellowex2 = ("T".split('')).map((w) => (
-        <div className = "Nav-Logo modalt yellow">
+        <div className = "Nav-Logo modalt yellow letter-size-n">
             {w}
         </div>   
       ));
       let yellowex3 = ("Y".split('')).map((w) => (
-        <div className = "Nav-Logo modalt grey">
+        <div className = "Nav-Logo modalt grey letter-size-n">
             {w}
         </div>   
       ));
 
       let greyex = ("MICRO".split('')).slice(0,5).map((w) => (
-        <div className = "Nav-Logo modalt grey">
+        <div className = "Nav-Logo modalt grey letter-size-n">
             {w}
         </div>   
       ));
@@ -82,13 +82,13 @@ const HowToModal = (props) => {
       let yellowex = yellowex1.concat(yellowex2, yellowex3)
 
       let sett = ("SETTY".split('')).slice(0,5).map((w) => (
-        <div className = "Nav-Logo modalt">
+        <div className = "Nav-Logo modalt letter-size-n">
             {w}
         </div>   
       ));
 
       let x = ("X".split('')).slice(0,5).map((w) => (
-        <div className = "Nav-Logo modalt x">
+        <div className = "Nav-Logo modalt x letter-size-n">
             {w}
         </div>   
       ));

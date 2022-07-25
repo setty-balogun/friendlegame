@@ -13,7 +13,8 @@ const SettingsModal = (props) => {
 
     const [isCheckedDM, setCheckedDM] = useState(localStorage.getItem("checked-dm") === "true");
     const [isCheckedHC, setCheckedHC] = useState(localStorage.getItem("checked-hc") === "true");
-
+    
+    const lt475 = useMediaPredicate("(max-width: 475px)");
     const lt330 = useMediaPredicate("(max-width: 330px)");
     const lt280 = useMediaPredicate("(max-width: 280px)");
 
@@ -53,21 +54,35 @@ const SettingsModal = (props) => {
                     {(lt330 && lt280) && <div className="joinModal-Header jMHeaderSzSmaller">Settings</div>}
                     <div className="joinModal-Underline"></div>
 
-                    <div className="settings-row settings-row-size-def">
+                    {!lt475 && <div className="settings-row settings-row-size-def">
                         <div className="settings-row-1">Dark Mode</div>
                         <div className="settings-row-2">
                             <input className="settings-inp" type="checkbox" id="toggle-dm" checked={isCheckedDM ? "checked" : ""} onChange={handleDM}/>
                             <label for="toggle-dm"> </label>
                         </div>
-                    </div>
+                    </div> }
+                    {lt475 && <div className="settings-row settings-row-size-sm">
+                        <div className="settings-row-1">Dark Mode</div>
+                        <div className="settings-row-2">
+                            <input className="settings-inp" type="checkbox" id="toggle-dm" checked={isCheckedDM ? "checked" : ""} onChange={handleDM}/>
+                            <label for="toggle-dm"> </label>
+                        </div>
+                    </div> }
 
-                    <div className="settings-row settings-row-size-def">
+                    {!lt475 && <div className="settings-row settings-row-size-def">
                         <div className="settings-row-1">High Contrast</div>
                         <div className="settings-row-2">
                             <input className="settings-inp" type="checkbox" id="toggle-hc" checked={isCheckedHC ? "checked" : ""} onChange={handleHC} />
                             <label for="toggle-hc"> </label>
                         </div>
-                    </div>
+                    </div> }
+                    {lt475 && <div className="settings-row settings-row-size-sm">
+                        <div className="settings-row-1">High Contrast</div>
+                        <div className="settings-row-2">
+                            <input className="settings-inp" type="checkbox" id="toggle-hc" checked={isCheckedHC ? "checked" : ""} onChange={handleHC} />
+                            <label for="toggle-hc"> </label>
+                        </div>
+                    </div> }
 
                     <div className="settings-row settings-row-size-def">
                         

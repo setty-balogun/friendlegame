@@ -30,7 +30,7 @@ const Create = (props) => {
             <div className="create-Underline"></div>
             {!lt500 && <div className="containerQR qrContDefault">
                 <div class="smallHeader sHDef">Your Friendle Code:</div>
-                <div class="codeText bold cTDef"> {localStorage.getItem("code")} </div>
+                <div class="codeText cTDef"> {localStorage.getItem("code")} </div>
                 <QRCodeSVG className="qr" bgColor={'transparent'} size={256} value={"https://friendle.herokuapp.com/play/" + localStorage.getItem("code")} />
             </div> }
             {lt500 && <div className="containerQR qrContSmall">

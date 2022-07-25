@@ -11,6 +11,7 @@ const StatsModal = (props) => {
     const handleOpen = () => { setVisibility(true) };
     const handleClose = () => { setVisibility(false) };
 
+    const lt475 = useMediaPredicate("(max-width: 475px)");
     const lt330 = useMediaPredicate("(max-width: 330px)");
     const lt280 = useMediaPredicate("(max-width: 280px)");
 
@@ -32,25 +33,41 @@ const StatsModal = (props) => {
                     {(lt330 && lt280) && <div className="joinModal-Header jMHeaderSzSmaller">Statistics</div>}
                     <div className="joinModal-Underline"></div>
 
-                    <div className="settings-row settings-row-size-def">
+                    {!lt475 && <div className="settings-row settings-row-size-def">
                         <div className="settings-row-1">Percent Won</div>
                         <div className="settings-row-2"> {props.gameData[2] === 0 ? 0 : Math.round(100 * props.gameData[0] / props.gameData[2])}% </div>
-                    </div>
+                    </div> }
+                    {lt475 && <div className="settings-row settings-row-size-sm">
+                        <div className="settings-row-1">Percent Won</div>
+                        <div className="settings-row-2"> {props.gameData[2] === 0 ? 0 : Math.round(100 * props.gameData[0] / props.gameData[2])}% </div>
+                    </div> }
 
-                    <div className="settings-row settings-row-size-def">
+                    {!lt475 && <div className="settings-row settings-row-size-def">
                         <div className="settings-row-1">Played</div>
                         <div className="settings-row-2"> {props.gameData[2]} </div>
-                    </div>
+                    </div> }
+                    {lt475 && <div className="settings-row settings-row-size-sm">
+                        <div className="settings-row-1">Played</div>
+                        <div className="settings-row-2"> {props.gameData[2]} </div>
+                    </div> }
 
-                    <div className="settings-row settings-row-size-def">
+                    {!lt475 && <div className="settings-row settings-row-size-def">
                         <div className="settings-row-1">Current Streak</div>
                         <div className="settings-row-2"> {props.gameData[3]} </div>
-                    </div>
+                    </div> }
+                    {lt475 && <div className="settings-row settings-row-size-sm">
+                        <div className="settings-row-1">Current Streak</div>
+                        <div className="settings-row-2"> {props.gameData[3]} </div>
+                    </div> }
 
-                    <div className="settings-row settings-row-size-def exmarg">
+                    {!lt475 && <div className="settings-row settings-row-size-def exmarg">
                         <div className="settings-row-1">Best Streak</div>
                         <div className="settings-row-2"> {props.gameData[4]} </div>
-                    </div>
+                    </div> }
+                    {lt475 && <div className="settings-row exmarg settings-row-size-sm">
+                        <div className="settings-row-1">Best Streak</div>
+                        <div className="settings-row-2"> {props.gameData[4]} </div>
+                    </div> }
                         
                 </Modal.Body>
             </Modal>

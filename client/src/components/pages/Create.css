@@ -67,7 +67,7 @@
     font-family: 'Manrope', sans-serif;
     letter-spacing: 0.5px;
     color: var(--blackgrey); 
-    font-weight: 700;
+    font-weight: bold;
     margin-left: auto;
     margin-right: auto;
 }
