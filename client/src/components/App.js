@@ -11,6 +11,7 @@ import "../utilities.css";
 import { socket } from "../client-socket.js";
 
 import { get, post } from "../utilities";
+import {Helmet} from "react-helmet";
 
 /**
  * Define the "App" component
@@ -114,6 +115,9 @@ const App = () => {
 
   return (
     <>
+      <Helmet>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Helmet>
       <div className = "setup">
         <NavBar finishedGame={finishedGame} gameData={gameData}/>
         <Router className = "App-Container" code={code}>

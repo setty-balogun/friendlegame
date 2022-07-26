@@ -411,7 +411,9 @@ const Play = (props) => {
                         {keyboardR1}
                     </div>
                     <div className = "Play-KeyboardRow2">
+                        <div className = "spacer-left"> </div>
                         {keyboardR2}
+                        <div className = "spacer-right"> </div>
                     </div>
                     <div className = "Play-KeyboardRow3">
                         {keyboardR3}
