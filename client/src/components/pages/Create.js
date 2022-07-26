@@ -13,7 +13,7 @@ const Create = (props) => {
 
     const copy = () => {
       const el = document.createElement('input');
-      el.value = "https://friendle.herokuapp.com/play/" + localStorage.getItem("code");
+      el.value = "https://friendlegame.herokuapp.com/play/" + localStorage.getItem("code");
       document.body.appendChild(el);
       el.select();
       document.execCommand('copy');
@@ -31,24 +31,24 @@ const Create = (props) => {
             {!lt500 && <div className="containerQR qrContDefault">
                 <div class="smallHeader sHDef">Your Friendle Code:</div>
                 <div class="codeText cTDef"> {localStorage.getItem("code")} </div>
-                <QRCodeSVG className="qr" bgColor={'transparent'} size={256} value={"https://friendle.herokuapp.com/play/" + localStorage.getItem("code")} />
+                <QRCodeSVG className="qr" bgColor={'transparent'} size={256} value={"https://friendlegame.herokuapp.com/play/" + localStorage.getItem("code")} />
             </div> }
             {lt500 && <div className="containerQR qrContSmall">
                 <div class="smallHeader sHSmall">Your Friendle Code:</div>
                 <div class="codeText bold cTSmall"> {localStorage.getItem("code")} </div>
-                <QRCodeSVG className="qr qrSmall" bgColor={'transparent'} value={"https://friendle.herokuapp.com/play/" + localStorage.getItem("code")} />
+                <QRCodeSVG className="qr qrSmall" bgColor={'transparent'} value={"https://friendlegame.herokuapp.com/play/" + localStorage.getItem("code")} />
             </div> }
             {!lt500 && <div className="containerLink cLDef">
                 <div class="smallHeader sHDef">Share Link:</div>
                 <div className="containerText contTDef">
-                    <input className="w-1 px-2 linkText linkTextDef" disabled value={"https://friendle.herokuapp.com/play/" + localStorage.getItem("code")}></input>
+                    <input className="w-1 px-2 linkText linkTextDef" disabled value={"https://friendlegame.herokuapp.com/play/" + localStorage.getItem("code")}></input>
                     <div className="linkButton linkButtonDef" onClick={copy}>{!copied ? "Copy" : "Copied!"}</div>
                 </div>
             </div> }
             {lt500 && <div className="containerLink cLSmall">
                 <div class="smallHeader sHSmall">Share Link:</div>
                 <div className="containerText contTSmall">
-                    <input className="w-1 px-2 linkText linkTextSmall" disabled value={"https://friendle.herokuapp.com/play/" + localStorage.getItem("code")}></input>
+                    <input className="w-1 px-2 linkText linkTextSmall" disabled value={"https://friendlegame.herokuapp.com/play/" + localStorage.getItem("code")}></input>
                     <div className="linkButton linkButtonSmall" onClick={copy}>{!copied ? "Copy" : "Copied!"}</div>
                 </div>
             </div> }
