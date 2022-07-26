@@ -114,7 +114,7 @@ const App = () => {
 
   return (
     <>
-
+      <div className = "setup">
         <NavBar finishedGame={finishedGame} gameData={gameData}/>
         <Router className = "App-Container" code={code}>
             <Skeleton path="/" setCode={setCode} code={code}/>
@@ -122,6 +122,7 @@ const App = () => {
             <Play path="/play/:code" code={code} finishGame={finishGame} setGameData={setGameData} gameData={gameData} />
             <NotFound default />
         </Router>
+      </div>
     </>
   );
 };
