@@ -7,6 +7,7 @@ import "../../utilities.css";
 
 const Create = (props) => {
     const [copied, setCopied] = useState(false);
+    const mt700 = useMediaPredicate("(min-width: 700px)");
     const lt500 = useMediaPredicate("(max-width: 500px)");
     const lt300 = useMediaPredicate("(max-width: 300px)");
     const lt240 = useMediaPredicate("(max-width: 240px)");
@@ -23,7 +24,7 @@ const Create = (props) => {
 
     return (
       <>
-        <div id="container">
+        {mt700 && <div id="container">
             { (lt500 && lt300) && <div class="header headerSmaller">Share to a Friend</div> }
             { !lt500 && <div class="header headerDefault">Share to a Friend</div> }
             { (lt500 && !lt300) && <div class="header headerSmall">Share to a Friend</div> }
@@ -52,7 +53,7 @@ const Create = (props) => {
                     <div className="linkButton linkButtonSmall" onClick={copy}>{!copied ? "Copy" : "Copied!"}</div>
                 </div>
             </div> }
-        </div>
+        </div>}
       </>
     );
   };
