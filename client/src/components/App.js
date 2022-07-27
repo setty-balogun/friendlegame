@@ -34,21 +34,13 @@ const App = () => {
   useEffect(() => {
     let data = [0,0,0,0,0];
 
-    console.log(gameData);
-    console.log(localStorage.getItem("stats"));
-
     if (localStorage.getItem("stats")) {
-      console.log("ooooo");
-      console.log(localStorage.getItem("num_wins"));
       data = [localStorage.getItem("num_wins"), localStorage.getItem("num_losses"), localStorage.getItem("num_games"), localStorage.getItem("cur_streak"), localStorage.getItem("max_streak")];
       for (var i = 0; i < data.length; i++) {
         data[i] = parseInt(data[i]);
       }
     } else {
-      console.log("!");
       localStorage.setItem("stats", "trueee");
-      console.log(localStorage.getItem("stats"));
-
       localStorage.setItem("num_wins", 0);
       console.log(localStorage.getItem("num_wins"));
       localStorage.setItem("num_losses", 0);
@@ -84,6 +76,12 @@ const App = () => {
   useEffect(() => {
     if (localStorage.getItem("checked-dm") === "true") {
       document.body.classList.add("dark-mode");
+    } 
+  }, []);
+
+  useEffect(() => {
+    if (localStorage.getItem("checked-hc") === "true") {
+      document.body.classList.add("high-contrast");
     } 
   }, []);
 

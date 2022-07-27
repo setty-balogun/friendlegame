@@ -166,11 +166,12 @@ form {
 
 body {
   background-color: var(--bgwhite);
-  position: relative;
   /*width: 700px;
   max-width: 100%;
   max-height: 100vh;*/
   display: flex;
   flex-direction: column;
   position: fixed;
+  height: 100%;
+  min-height: -webkit-fill-available;
 }
