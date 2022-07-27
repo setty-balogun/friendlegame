@@ -159,6 +159,7 @@ form {
   background-color: var(--appbg);
   display: flex;
   justify-content: center;
+  overflow: hidden;
   overscroll-behavior: contain;
   align-items: stretch;
 }
