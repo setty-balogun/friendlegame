@@ -1,6 +1,6 @@
 .Play-Container{
     display: flex;
-    height: var(--vh);
+    height: 90%;
     max-width: 700px;
 
     background-color: var(--bgwhite);
