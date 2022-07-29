@@ -1,6 +1,6 @@
 .Play-Container{
     display: flex;
-    height: 90%;
+    height: 100%;
     max-width: 700px;
 
     background-color: var(--bgwhite);
@@ -206,6 +206,7 @@
 }
 
 .Play-KeyTile:active{
+    transition-delay: -2.5s ;
     background-color: var(--tilegrey);
     box-shadow: 0 4px 0 0 var(--tilegreyshadow);
 }
