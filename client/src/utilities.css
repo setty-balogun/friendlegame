@@ -155,7 +155,8 @@ form {
 
 .App-Container{ 
   width: var(--vw);
-  height: calc(100vh - calc(100vh - 100%));
+  min-height: -webkit-fill-available;
+  height: 90vh;
   background-color: var(--appbg);
   display: flex;
   justify-content: center;
@@ -172,6 +173,7 @@ body {
   display: flex;
   flex-direction: column;
   position: fixed;
-  height: calc(100vh - calc(100vh - 100%));
+  
+  
   
 }
