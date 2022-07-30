@@ -114,7 +114,7 @@ const App = () => {
   return (
     <>
       <Helmet>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width, maximum-scale=1.0" />
       </Helmet>
       <div className = "setup">
         <NavBar finishedGame={finishedGame} gameData={gameData}/>
